@@ -51,6 +51,10 @@ Class cEmpleadoDataDictionary is a DataDictionary
         Set Field_Prompt_Object Field Empleado.Nacionalidad to ListaNacionalidad
         Set Field_Option Field Empleado.Nacionalidad DD_CAPSLOCK to True
         Set Field_Option Field Empleado.Nacionalidad DD_REQUIRED to True
+        
+       
+        
+         
 
     End_Procedure
 

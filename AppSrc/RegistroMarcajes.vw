@@ -9,6 +9,7 @@ Use cMarcajeDataDictionary.dd
 Use cDbCJGridColumnSuggestion.pkg
 Use cCJGridColumn.pkg
 
+
 Activate_View Activate_RegistroMarcajes for RegistroMarcajes
 Object RegistroMarcajes is a dbView
     Object oTipoMarcaje_DD is a cTipoMarcajeDataDictionary
@@ -30,68 +31,85 @@ Object RegistroMarcajes is a dbView
     Set Server to oMarcaje_DD
 
     Set Border_Style to Border_Thick
-    Set Size to 236 498
+    Set Size to 236 437
     Set Location to 2 2
     Set Label to "Registro de Marcajes"
     Set Bitmap_Style to Bitmap_Center
+    Set Auto_Top_Panel_State to False
+    Set Auto_Top_Item_State to False
+    Set piMaxSize to 236 437
+    Set piMinSize to 236 437
+    
     
 
     Object oDbGroup1 is a dbGroup
-        Set Size to 207 480
+        Set Size to 218 462
         Set Location to 13 11
         Set Label to "Registro de Marcajes"
 
         Object oDbCJGrid1 is a cDbCJGrid
-            Set Size to 183 463
-            Set Location to 14 9
+            Set Size to 198 402
+            Set Location to 11 5
+            Set pbAllowColumnRemove to False
+            Set pbAllowColumnResize to False
+            Set pbAllowColumnReorder to False
 
             Object oMarcaje_Numero is a cDbCJGridColumn
                 Entry_Item Marcaje.Numero
-                Set piWidth to 52
+                Set piWidth to 50
                 Set psCaption to "Numero"
                 Set pbCapslock to True
+                Set peTextAlignment to xtpAlignmentCenter
             End_Object
             
             
 
             Object oMarcaje_Empleado is a cDbCJGridColumn
                 Entry_Item Empleado.Numero 
-                Set piWidth to 69
+                Set piWidth to 60
                 Set psCaption to "Empleado"
-            End_Object
-
-            Object ColumnaUnida is a cDbCJGridColumn
-                
-                Set piWidth to 144
-                Set psCaption to "Todo"
-                Set Visible_State to True
-            End_Object
-
-            Object oEmpleado_PrimerNombre is a cDbCJGridColumn 
-                               
-                Entry_Item Empleado.PrimerApellido
-                
-                Set piWidth to 226
-                Set psCaption to "Nombre Completo"
+                Set peTextAlignment to xtpAlignmentCenter
                 Set pbResizable to False
+            End_Object
+
+            Object oEmpleado_PrimerNombre is a cDbCJGridColumn
+                Entry_Item Empleado.PrimerNombre
+                Set piWidth to 62
+                Set psCaption to "Nombres"
+            End_Object
+
+            Object oEmpleado_SegundoNombre is a cDbCJGridColumn
+                Entry_Item Empleado.SegundoNombre
+                Set piWidth to 60
+            End_Object
+
+            Object oEmpleado_PrimerApellido is a cDbCJGridColumn
+                Entry_Item Empleado.PrimerApellido
+                Set piWidth to 60
+                Set psCaption to "Apellidos"
+            End_Object
+
+            Object oEmpleado_SegundoApellido is a cDbCJGridColumn
+                Entry_Item Empleado.SegundoApellido
+                Set piWidth to 60
             End_Object
 
             Object oMarcaje_FechaMarcaje is a cDbCJGridColumn
                 Entry_Item Marcaje.FechaMarcaje
-                Set piWidth to 87
+                Set piWidth to 60
                 Set psCaption to "Fecha"
             End_Object
 
             Object oMarcaje_HoraMarcaje is a cDbCJGridColumn
                 Entry_Item Marcaje.HoraMarcaje
-                Set piWidth to 91
+                Set piWidth to 60
                 Set psCaption to "Hora"
             End_Object
 
             Object oMarcaje_TipoMarcaje is a cDbCJGridColumn
                 Entry_Item TipoMarcaje.Numero
-                Set piWidth to 72
-                Set psCaption to "Tipo Marcaje"
+                Set piWidth to 60
+                Set psCaption to "# Marcaje"
                 Set Prompt_Button_Mode to PB_PromptOn
                 Set Prompt_Object of oMarcaje_TipoMarcaje to (ListaTipoMarcaje(Current_Object))
                 
@@ -99,7 +117,7 @@ Object RegistroMarcajes is a dbView
 
             Object oTipoMarcaje_TipoMarcaje is a cDbCJGridColumn
                 Entry_Item TipoMarcaje.TipoMarcaje
-                Set piWidth to 69
+                Set piWidth to 60
                 Set psCaption to "Marcaje"
                 
             End_Object

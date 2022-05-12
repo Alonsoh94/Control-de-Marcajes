@@ -1,0 +1,285 @@
+Use Windows.pkg
+Use DFRptVw.pkg
+Use DFRpt.pkg
+Use File_Dlg.Pkg
+Use cNacionalidadDataDictionary.dd
+Use cEmpleadoDataDictionary.dd
+Use cTipoMarcajeDataDictionary.dd
+Use cMarcajeDataDictionary.dd
+Use DFEntry.pkg
+Use dfclient.pkg
+Use MonthCalendarPrompt.dg
+
+Activate_View Activate_Marcajes for Marcajes
+Object Marcajes is a ReportView
+    Object oTipoMarcaje_DD is a cTipoMarcajeDataDictionary
+    End_Object
+
+    Object oNacionalidad_DD is a cNacionalidadDataDictionary
+    End_Object
+
+    Object oEmpleado_DD is a cEmpleadoDataDictionary
+        Set DDO_Server to oNacionalidad_DD
+    End_Object
+
+    Object oMarcaje_DD is a cMarcajeDataDictionary
+        Set DDO_Server to oTipoMarcaje_DD
+        Set DDO_Server to oEmpleado_DD
+    End_Object
+
+    Set Main_DD to oMarcaje_DD
+    Set Server to oMarcaje_DD
+
+    Set Location to 7 11
+    Set Size to 190 258
+    Set Label to "Marcajes"
+
+    Object oSaveAsDialog is a SaveAsDialog
+    End_Object
+
+    Procedure StartReport
+        Integer iOutputDevice 
+        Handle hoWorkspace
+        String sFileName sCurrentDirectory sDataPath
+    
+        Get Output_Device_Mode to iOutputDevice
+    
+        Case Begin
+            Case (iOutputDevice = PRINT_TO_WINDOW)
+                Get_Current_Directory to sCurrentDirectory
+                Get phoWorkspace Of ghoApplication to hoWorkspace
+                Get psDataPath Of hoWorkspace to sDataPath
+                Get PathAtIndex Of hoWorkspace sDataPath 1 to sDataPath
+                Set_Directory sDataPath
+                Make_Temp_File "TXT" sFileName
+                Set_Directory sCurrentDirectory
+                If (Right(sDataPath, 1) <> Sysconf(SYSCONF_DIR_SEPARATOR)) Begin
+                    Move (sDataPath - Sysconf(SYSCONF_DIR_SEPARATOR)) To sDataPath
+                End
+                Move (sDataPath - sFileName) to sFileName
+                Set Output_Device_Name to sFileName
+                Case Break
+            
+        Case End
+    
+        Send Run_Report
+    
+        If (iOutputDevice = PRINT_TO_WINDOW) Begin
+            Runprogram Background "NotePad" sFileName
+            EraseFile sFileName
+        End
+    End_Procedure
+    
+    Object oBasicReport is a BasicReport
+        // Set Server To DDOName
+        
+        // Create a new file with the images for the report. Include this filename in the
+        // component with a USE statement. Replace the HeaderSection, BodySection, FooterSection
+        // with the imagenames you've created.
+        // NOTE: 
+        // - Image names must be unique throughout the program
+        // - Images start at the first column of the sourcecode in the format /ImageName
+        // - End of an image is the start of a new one or a /*
+
+        Function Starting_Main_Report Returns Integer
+            Integer iRetval
+            
+            Forward Get Starting_Main_Report to iRetval
+            
+            Function_Return iRetval
+        End_Function
+
+       
+
+    End_Object
+
+    Object GrupoRangoFechas is a Group
+        Set Size to 57 217
+        Set Location to 97 20
+        Set Label to "Rango de Fechas"
+
+        Object oGroup1 is a Group
+            Set Size to 29 95
+            Set Location to 19 6
+            Set Label to "Fecha Inicial   *"
+
+            Object TxtFechaInicial is a Form
+                Set Size to 13 81
+                Set Location to 10 7
+                Set Form_Datatype to Mask_Date_Window
+                Set Prompt_Object to oMonthCalendarPrompt
+                Set Prompt_Button_Mode to PB_PromptOn
+            
+                // OnChange is called on every changed character
+            //    Procedure OnChange
+            //        String sValue
+            //    
+            //        Get Value to sValue
+            //    End_Procedure
+            
+            End_Object
+        End_Object
+
+        Object oGroup1 is a Group
+            Set Size to 29 95
+            Set Location to 19 110
+            Set Label to "Fecha Final  *"
+
+            Object TxtFechaFinal is a Form
+                Set Size to 13 81
+                Set Location to 10 7
+                Set Form_Datatype to Mask_Date_Window
+                Set Prompt_Object to oMonthCalendarPrompt
+                Set Prompt_Button_Mode to PB_PromptOn
+            
+                // OnChange is called on every changed character
+            //    Procedure OnChange
+            //        String sValue
+            //    
+            //        Get Value to sValue
+            //    End_Procedure
+            
+            End_Object
+        End_Object
+    End_Object
+
+    Object oDbGroup1 is a dbGroup
+        Set Size to 80 216
+        Set Location to 13 20
+        Set Label to "Seleccionar filtros para el reporte"
+
+        Object TxtPais is a Form
+            Set Size to 13 40
+            Set Location to 22 55
+            Set Label to "Pais :"
+            Set Label_Col_Offset to 20
+            Set Prompt_Button_Mode to PB_PromptOn
+            Set Prompt_Object to (ListaNacionalidad(TxtPais))
+            Set Aux_Value to 0
+            //Set Form_Datatype to Mask_Numeric_Window
+            //Set Value to Default_Numeric_Mask
+           
+
+            Procedure OnChange
+                Forward Send OnChange
+                Set Label of EtiquetaPais to Nacionalidad.Pais
+                
+            
+                
+                
+            End_Procedure
+        
+            // OnChange is called on every changed character
+        //    Procedure OnChange
+        //        String sValue
+        //    
+        //        Get Value to sValue
+        //    End_Procedure
+        
+        End_Object
+
+        Object TxtEmpleado is a Form
+            Set Size to 13 40
+            Set Location to 44 55
+            Set Label to "Empleado :"
+            Set Label_Col_Offset to 38
+            Set Prompt_Button_Mode to PB_PromptOn
+            Set Prompt_Object to (ListaEmpleado(TxtEmpleado))            
+            Set Aux_Value to 0
+         
+
+            Procedure OnChange
+                Forward Send OnChange 
+                Set Label of EtiquetaEmpleado to (Trim(Empleado.PrimerNombre) + ' ' + Trim(Empleado.SegundoNombre) + ' ' + Trim(Empleado.PrimerApellido) + ' ' + Trim(Empleado.SegundoApellido))
+               
+            End_Procedure
+        
+            // OnChange is called on every changed character
+        //    Procedure OnChange
+        //        String sValue
+        //    
+        //        Get Value to sValue
+        //    End_Procedure
+        
+        End_Object
+
+        Object EtiquetaEmpleado is a TextBox
+            Set Size to 10 32
+            Set Location to 46 99
+            //Set Label to (Trim(Empleado.PrimerNombre) + ' ' + Trim(Empleado.PrimerNombre))
+        End_Object
+
+        Object EtiquetaPais is a TextBox
+            Set Size to 10 32
+            Set Location to 25 100
+            //Set Label to (Trim(Empleado.PrimerNombre) + ' ' + Trim(Empleado.PrimerNombre))
+        End_Object
+    End_Object
+
+    Object BtnGenerar is a Button  // ********Boton Generar
+        Set Size to 14 68
+        Set Location to 162 23
+        Set Label to "Generar"
+    
+        // fires when the button is clicked
+        Procedure OnClick
+            Forward Send OnClick False 
+             String Mensaje
+             Variant obtener
+             
+             Get Value of TxtPais to obtener
+            
+            If ( obtener = rdString) Begin           
+                 Send Info_Box "Solo se admiten valores Numericos"
+                 Procedure_Return
+            End 
+            Else Begin
+                If (obtener = 0) Begin
+                     Move "Pais no Seleccionado" to Mensaje                     
+                End
+                Else Begin
+                    Move obtener to Mensaje
+                   
+                End
+            End
+            
+            
+            
+            
+        End_Procedure
+    
+    End_Object
+
+    Object BtnNuevo is a Button
+        Set Size to 14 68
+        Set Location to 162 108
+        Set Label to "Nuevo"
+    
+        // fires when the button is clicked
+        Procedure OnClick
+             Number Dato 
+             String Mensaje
+            
+            Get Value of TxtPais to Dato
+            
+            If (Dato = 0) Begin
+                Move "Pais no Seleccionado" to Mensaje
+            End
+            Else Begin
+               Get Label of EtiquetaPais to Mensaje
+            End
+            
+        End_Procedure
+    
+    End_Object
+    
+    Procedure GenerarReporteMarcaje
+        
+        
+        
+    End_Procedure
+
+  
+    
+    
+End_Object

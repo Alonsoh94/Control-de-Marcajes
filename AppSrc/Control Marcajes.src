@@ -8,6 +8,7 @@
 //*************************************************************************************
 Use DFAllEnt.pkg
 Use cCJStandardCommandBarSystem.pkg
+Use MonthCalendarPrompt.dg
 
 Object oHtmlHelp is a cHtmlHelp
 End_Object
@@ -124,10 +125,21 @@ Object oMain is a Panel
             End_Object
             
             Object oReportMenu is a cCJMenuItem
-                Set peControlType to xtpControlPopup          
+                Set peControlType to xtpControlPopup
                 Set psCaption to "&Informes"
                 Set psToolTip to "Informes"
                 Set psDescription to "Informes disponibles"
+
+                Object oMarcajesMenuItem is a cCJMenuItem
+                    Set psCaption to "Marcajes"
+                    Set psTooltip to "Marcajes"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_Marcajes of hoClient
+                    End_Procedure
+                End_Object
             End_Object
 
             Object oNavigateMenu is a cCJMenuItem
@@ -334,6 +346,7 @@ Object oMain is a Panel
         Use StdAbout.pkg
         Use RegistroEmpleado.vw
         Use RegistroMarcajes.vw
+        Use Marcajes.rv
 
         Procedure Activate_About
             Send DoAbout "" "" "" "" ""
