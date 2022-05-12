@@ -1,4 +1,4 @@
-Compiling Program: C:\DataFlex Projects\Control Marcajes\AppSrc\Control Marcajes.src
+Compiling Program: D:\Sistemas\Jose\Control-de-Marcajes\AppSrc\Control Marcajes.src
 Memory Available: 2147483646
 1>//**************************************************************
 1>// WindowsProject.tpl for Spanish translated by Moose Software (www.moose-software.com) 
@@ -3714,19 +3714,19 @@ Including file: DFBTRDRV.PKG    (C:\Program Files (x86)\DataFlex 18.2\Pkg\DFBTRD
 77734>>>        Send Destroy of hoObj // when done, it will be destroyed
 77735>>>End_procedure
 77736>        Use RegistroEmpleado.vw
-Including file: RegistroEmpleado.vw    (C:\DataFlex Projects\Control Marcajes\AppSrc\RegistroEmpleado.vw)
+Including file: RegistroEmpleado.vw    (D:\Sistemas\Jose\Control-de-Marcajes\AppSrc\RegistroEmpleado.vw)
 77736>>>Use Windows.pkg
 77736>>>Use DFClient.pkg
 77736>>>Use cNacionalidadDataDictionary.dd
-Including file: cNacionalidadDataDictionary.dd    (C:\DataFlex Projects\Control Marcajes\DDSrc\cNacionalidadDataDictionary.dd)
+Including file: cNacionalidadDataDictionary.dd    (D:\Sistemas\Jose\Control-de-Marcajes\DDSrc\cNacionalidadDataDictionary.dd)
 77736>>>>>Use DataDict.pkg
 77736>>>>>
 77736>>>>>Open Nacionalidad
-Including file: Nacionalidad.fd    (C:\DataFlex Projects\Control Marcajes\DDSrc\Nacionalidad.fd)
+Including file: Nacionalidad.fd    (D:\Sistemas\Jose\Control-de-Marcajes\DDSrc\Nacionalidad.fd)
 77738>>>>>Open Empleado
-Including file: Empleado.fd    (C:\DataFlex Projects\Control Marcajes\DDSrc\Empleado.fd)
+Including file: Empleado.fd    (D:\Sistemas\Jose\Control-de-Marcajes\DDSrc\Empleado.fd)
 77740>>>>>Open Autoincrementable
-Including file: Autoincrementable.fd    (C:\DataFlex Projects\Control Marcajes\DDSrc\Autoincrementable.fd)
+Including file: Autoincrementable.fd    (D:\Sistemas\Jose\Control-de-Marcajes\DDSrc\Autoincrementable.fd)
 77742>>>>>
 77742>>>>>Register_Object ListadoNacionalidades
 77742>>>>>
@@ -3760,13 +3760,13 @@ Including file: Autoincrementable.fd    (C:\DataFlex Projects\Control Marcajes\D
 77762>>>>>
 77762>>>>>
 77762>>>Use cEmpleadoDataDictionary.dd
-Including file: cEmpleadoDataDictionary.dd    (C:\DataFlex Projects\Control Marcajes\DDSrc\cEmpleadoDataDictionary.dd)
+Including file: cEmpleadoDataDictionary.dd    (D:\Sistemas\Jose\Control-de-Marcajes\DDSrc\cEmpleadoDataDictionary.dd)
 77762>>>>>Use DataDict.pkg
 77762>>>>>
 77762>>>>>Open Empleado
 77764>>>>>Open Nacionalidad
 77766>>>>>Open Marcaje
-Including file: Marcaje.fd    (C:\DataFlex Projects\Control Marcajes\DDSrc\Marcaje.fd)
+Including file: Marcaje.fd    (D:\Sistemas\Jose\Control-de-Marcajes\DDSrc\Marcaje.fd)
 77768>>>>>Open Autoincrementable
 77770>>>>>
 77770>>>>>Register_Object ListaEmpleado
@@ -3825,7 +3825,7 @@ Including file: Marcaje.fd    (C:\DataFlex Projects\Control Marcajes\DDSrc\Marca
 77804>>>>>End_Class
 77805>>>>>
 77805>>>>>Use ListaNacionalidad.sl
-Including file: ListaNacionalidad.sl    (C:\DataFlex Projects\Control Marcajes\AppSrc\ListaNacionalidad.sl)
+Including file: ListaNacionalidad.sl    (D:\Sistemas\Jose\Control-de-Marcajes\AppSrc\ListaNacionalidad.sl)
 77805>>>>>>>//**************************************************************
 77805>>>>>>>// TableLookup.tpl for Windows application for Spanish 
 77805>>>>>>>// translated by Moose Software (www.moose-software.com) 
@@ -3913,7 +3913,7 @@ Including file: ListaNacionalidad.sl    (C:\DataFlex Projects\Control Marcajes\A
 77874>>>>>>>
 77874>>>>>
 77874>>>>>Use ListaEmpleado.sl
-Including file: ListaEmpleado.sl    (C:\DataFlex Projects\Control Marcajes\AppSrc\ListaEmpleado.sl)
+Including file: ListaEmpleado.sl    (D:\Sistemas\Jose\Control-de-Marcajes\AppSrc\ListaEmpleado.sl)
 77874>>>>>>>//**************************************************************
 77874>>>>>>>// TableLookup.tpl for Windows application for Spanish 
 77874>>>>>>>// translated by Moose Software (www.moose-software.com) 
@@ -7500,7 +7500,7 @@ Including file: sql.pkg    (C:\Program Files (x86)\DataFlex 18.2\Pkg\sql.pkg)
 79886>>>Cd_End_Object
 79888>>>>
 79888>        Use RegistroMarcajes.vw
-Including file: RegistroMarcajes.vw    (C:\DataFlex Projects\Control Marcajes\AppSrc\RegistroMarcajes.vw)
+Including file: RegistroMarcajes.vw    (D:\Sistemas\Jose\Control-de-Marcajes\AppSrc\RegistroMarcajes.vw)
 79888>>>Use Windows.pkg
 79888>>>Use DFClient.pkg
 79888>>>Use cDbCJGrid.pkg
@@ -7508,11 +7508,11 @@ Including file: RegistroMarcajes.vw    (C:\DataFlex Projects\Control Marcajes\Ap
 79888>>>Use cNacionalidadDataDictionary.dd
 79888>>>Use cEmpleadoDataDictionary.dd
 79888>>>Use cTipoMarcajeDataDictionary.dd
-Including file: cTipoMarcajeDataDictionary.dd    (C:\DataFlex Projects\Control Marcajes\DDSrc\cTipoMarcajeDataDictionary.dd)
+Including file: cTipoMarcajeDataDictionary.dd    (D:\Sistemas\Jose\Control-de-Marcajes\DDSrc\cTipoMarcajeDataDictionary.dd)
 79888>>>>>Use DataDict.pkg
 79888>>>>>
 79888>>>>>Open TipoMarcaje
-Including file: TipoMarcaje.fd    (C:\DataFlex Projects\Control Marcajes\DDSrc\TipoMarcaje.fd)
+Including file: TipoMarcaje.fd    (D:\Sistemas\Jose\Control-de-Marcajes\DDSrc\TipoMarcaje.fd)
 79890>>>>>Open Marcaje
 79892>>>>>Open Autoincrementable
 79894>>>>>
@@ -7543,7 +7543,7 @@ Including file: TipoMarcaje.fd    (C:\DataFlex Projects\Control Marcajes\DDSrc\T
 79913>>>>>
 79913>>>>>End_Class
 79914>>>Use cMarcajeDataDictionary.dd
-Including file: cMarcajeDataDictionary.dd    (C:\DataFlex Projects\Control Marcajes\DDSrc\cMarcajeDataDictionary.dd)
+Including file: cMarcajeDataDictionary.dd    (D:\Sistemas\Jose\Control-de-Marcajes\DDSrc\cMarcajeDataDictionary.dd)
 79914>>>>>Use DataDict.pkg
 79914>>>>>
 79914>>>>>Open Marcaje
@@ -7594,7 +7594,7 @@ Including file: cMarcajeDataDictionary.dd    (C:\DataFlex Projects\Control Marca
 79950>>>>>
 79950>>>>>Use ListaEmpleado.sl
 79950>>>>>Use ListaTipoMarcaje.sl
-Including file: ListaTipoMarcaje.sl    (C:\DataFlex Projects\Control Marcajes\AppSrc\ListaTipoMarcaje.sl)
+Including file: ListaTipoMarcaje.sl    (D:\Sistemas\Jose\Control-de-Marcajes\AppSrc\ListaTipoMarcaje.sl)
 79950>>>>>>>//**************************************************************
 79950>>>>>>>// TableLookup.tpl for Windows application for Spanish 
 79950>>>>>>>// translated by Moose Software (www.moose-software.com) 
@@ -7746,522 +7746,574 @@ Including file: ListaTipoMarcaje.sl    (C:\DataFlex Projects\Control Marcajes\Ap
 80082>>>                Set peTextAlignment to xtpAlignmentCenter
 80083>>>                Set pbResizable to False
 80084>>>            End_Object
-80085>>>
-80085>>>            Object oEmpleado_PrimerNombre is a cDbCJGridColumn
-80087>>>                Entry_Item Empleado.PrimerNombre
-80088>>>                Set piWidth to 62
-80089>>>                Set psCaption to "Nombres"
-80090>>>            End_Object
-80091>>>
-80091>>>            Object oEmpleado_SegundoNombre is a cDbCJGridColumn
-80093>>>                Entry_Item Empleado.SegundoNombre
-80094>>>                Set piWidth to 60
-80095>>>            End_Object
-80096>>>
-80096>>>            Object oEmpleado_PrimerApellido is a cDbCJGridColumn
-80098>>>                Entry_Item Empleado.PrimerApellido
-80099>>>                Set piWidth to 60
-80100>>>                Set psCaption to "Apellidos"
-80101>>>            End_Object
-80102>>>
-80102>>>            Object oEmpleado_SegundoApellido is a cDbCJGridColumn
-80104>>>                Entry_Item Empleado.SegundoApellido
-80105>>>                Set piWidth to 60
-80106>>>            End_Object
-80107>>>
-80107>>>            Object oMarcaje_FechaMarcaje is a cDbCJGridColumn
-80109>>>                Entry_Item Marcaje.FechaMarcaje
-80110>>>                Set piWidth to 60
-80111>>>                Set psCaption to "Fecha"
-80112>>>            End_Object
-80113>>>
-80113>>>            Object oMarcaje_HoraMarcaje is a cDbCJGridColumn
-80115>>>                Entry_Item Marcaje.HoraMarcaje
-80116>>>                Set piWidth to 60
-80117>>>                Set psCaption to "Hora"
-80118>>>            End_Object
-80119>>>
-80119>>>            Object oMarcaje_TipoMarcaje is a cDbCJGridColumn
-80121>>>                Entry_Item TipoMarcaje.Numero
-80122>>>                Set piWidth to 60
-80123>>>                Set psCaption to "# Marcaje"
-80124>>>                Set Prompt_Button_Mode to PB_PromptOn
-80125>>>                Set Prompt_Object of oMarcaje_TipoMarcaje to (ListaTipoMarcaje(Current_Object))
-80126>>>                
+80085>>>            
+80085>>>            Object oEmpleado_Nombre is a cDbCJGridColumn
+80087>>>                //Set Value to Empleado.PrimerNombre
+80087>>>                Set piWidth to 150
+80088>>>                Set psCaption to "Nombres"
+80089>>>                Set pbFocusable to False
+80090>>>                
+80090>>>                Procedure OnSetCalculatedValue String ByRef sValue
+80093>>>                    
+80093>>>                    Move '' to sValue
+80094>>>                    Append sValue (Trim(Empleado.PrimerNombre)) ' ' (Trim(Empleado.SegundoNombre))
+80097>>>                End_Procedure
+80098>>>
+80098>>>            End_Object            
+80099>>>
+80099>>>            Object oEmpleado_PrimerNombre is a cDbCJGridColumn
+80101>>>                Entry_Item Empleado.PrimerNombre
+80102>>>                Set piWidth to 62
+80103>>>                Set psCaption to "Nombres"
+80104>>>            End_Object
+80105>>>
+80105>>>            Object oEmpleado_SegundoNombre is a cDbCJGridColumn
+80107>>>                Entry_Item Empleado.SegundoNombre
+80108>>>                Set piWidth to 60
+80109>>>            End_Object
+80110>>>
+80110>>>            Object oEmpleado_PrimerApellido is a cDbCJGridColumn
+80112>>>                Entry_Item Empleado.PrimerApellido
+80113>>>                Set piWidth to 60
+80114>>>                Set psCaption to "Apellidos"
+80115>>>            End_Object
+80116>>>
+80116>>>            Object oEmpleado_SegundoApellido is a cDbCJGridColumn
+80118>>>                Entry_Item Empleado.SegundoApellido
+80119>>>                Set piWidth to 60
+80120>>>            End_Object
+80121>>>
+80121>>>            Object oMarcaje_FechaMarcaje is a cDbCJGridColumn
+80123>>>                Entry_Item Marcaje.FechaMarcaje
+80124>>>                Set piWidth to 60
+80125>>>                Set psCaption to "Fecha"
 80126>>>            End_Object
 80127>>>
-80127>>>            Object oTipoMarcaje_TipoMarcaje is a cDbCJGridColumn
-80129>>>                Entry_Item TipoMarcaje.TipoMarcaje
+80127>>>            Object oMarcaje_HoraMarcaje is a cDbCJGridColumn
+80129>>>                Entry_Item Marcaje.HoraMarcaje
 80130>>>                Set piWidth to 60
-80131>>>                Set psCaption to "Marcaje"
-80132>>>                
+80131>>>                Set psCaption to "Hora"
 80132>>>            End_Object
-80133>>>        End_Object
-80134>>>    End_Object
-80135>>>
-80135>>>End_Object
-80136>        Use Marcajes.rv
-Including file: Marcajes.rv    (C:\DataFlex Projects\Control Marcajes\AppSrc\Marcajes.rv)
-80136>>>Use Windows.pkg
-80136>>>Use DFRptVw.pkg
-80136>>>Use DFRpt.pkg
-80136>>>Use File_Dlg.Pkg
-80136>>>Use cNacionalidadDataDictionary.dd
-80136>>>Use cEmpleadoDataDictionary.dd
-80136>>>Use cTipoMarcajeDataDictionary.dd
-80136>>>Use cMarcajeDataDictionary.dd
-80136>>>Use DFEntry.pkg
-80136>>>Use dfclient.pkg
-80136>>>Use MonthCalendarPrompt.dg
-80136>>>
-80136>>>Activate_View Activate_Marcajes for Marcajes
-80146>>>>
-80146>>>Object Marcajes is a ReportView
-80148>>>    Object oTipoMarcaje_DD is a cTipoMarcajeDataDictionary
-80150>>>    End_Object
-80151>>>
-80151>>>    Object oNacionalidad_DD is a cNacionalidadDataDictionary
-80153>>>    End_Object
-80154>>>
-80154>>>    Object oEmpleado_DD is a cEmpleadoDataDictionary
-80156>>>        Set DDO_Server to oNacionalidad_DD
-80157>>>    End_Object
-80158>>>
-80158>>>    Object oMarcaje_DD is a cMarcajeDataDictionary
-80160>>>        Set DDO_Server to oTipoMarcaje_DD
-80161>>>        Set DDO_Server to oEmpleado_DD
-80162>>>    End_Object
-80163>>>
-80163>>>    Set Main_DD to oMarcaje_DD
-80164>>>    Set Server to oMarcaje_DD
-80165>>>
-80165>>>    Set Location to 7 11
-80166>>>    Set Size to 190 258
-80167>>>    Set Label to "Marcajes"
-80168>>>
-80168>>>    Object oSaveAsDialog is a SaveAsDialog
-80170>>>    End_Object
-80171>>>
-80171>>>    Procedure StartReport
-80174>>>        Integer iOutputDevice 
-80174>>>        Handle hoWorkspace
-80174>>>        String sFileName sCurrentDirectory sDataPath
-80174>>>    
-80174>>>        Get Output_Device_Mode to iOutputDevice
-80175>>>    
-80175>>>        Case Begin
-80175>>>            Case (iOutputDevice = PRINT_TO_WINDOW)
-80177>>>                Get_Current_Directory to sCurrentDirectory
-80178>>>                Get phoWorkspace Of ghoApplication to hoWorkspace
-80179>>>                Get psDataPath Of hoWorkspace to sDataPath
-80180>>>                Get PathAtIndex Of hoWorkspace sDataPath 1 to sDataPath
-80181>>>                Set_Directory sDataPath
-80182>>>                Make_Temp_File "TXT" sFileName
-80183>>>                Set_Directory sCurrentDirectory
-80184>>>                If (Right(sDataPath, 1) <> Sysconf(SYSCONF_DIR_SEPARATOR)) Begin
-80186>>>                    Move (sDataPath - Sysconf(SYSCONF_DIR_SEPARATOR)) To sDataPath
-80187>>>                End
-80187>>>>
-80187>>>                Move (sDataPath - sFileName) to sFileName
-80188>>>                Set Output_Device_Name to sFileName
-80189>>>                Case Break
-80190>>>            
-80190>>>        Case End
-80190>>>    
-80190>>>        Send Run_Report
-80191>>>    
-80191>>>        If (iOutputDevice = PRINT_TO_WINDOW) Begin
-80193>>>            Runprogram Background "NotePad" sFileName
-80194>>>            EraseFile sFileName
-80195>>>>
-80195>>>        End
-80195>>>>
-80195>>>    End_Procedure
-80196>>>    
-80196>>>    Object oBasicReport is a BasicReport
-80198>>>        // Set Server To DDOName
-80198>>>        
-80198>>>        // Create a new file with the images for the report. Include this filename in the
-80198>>>        // component with a USE statement. Replace the HeaderSection, BodySection, FooterSection
-80198>>>        // with the imagenames you've created.
-80198>>>        // NOTE: 
-80198>>>        // - Image names must be unique throughout the program
-80198>>>        // - Images start at the first column of the sourcecode in the format /ImageName
-80198>>>        // - End of an image is the start of a new one or a /*
-80198>>>
-80198>>>        Function Starting_Main_Report Returns Integer
-80201>>>            Integer iRetval
-80201>>>            
-80201>>>            Forward Get Starting_Main_Report to iRetval
-80203>>>            
-80203>>>            Function_Return iRetval
-80204>>>        End_Function
-80205>>>
-80205>>>       
-80205>>>
-80205>>>    End_Object
-80206>>>
-80206>>>    Object GrupoRangoFechas is a Group
-80208>>>        Set Size to 57 217
-80209>>>        Set Location to 97 20
-80210>>>        Set Label to "Rango de Fechas"
-80211>>>
-80211>>>        Object oGroup1 is a Group
-80213>>>            Set Size to 29 95
-80214>>>            Set Location to 19 6
-80215>>>            Set Label to "Fecha Inicial   *"
-80216>>>
-80216>>>            Object TxtFechaInicial is a Form
-80218>>>                Set Size to 13 81
-80219>>>                Set Location to 10 7
-80220>>>                Set Form_Datatype to Mask_Date_Window
-80221>>>                Set Prompt_Object to oMonthCalendarPrompt
-80222>>>                Set Prompt_Button_Mode to PB_PromptOn
-80223>>>            
-80223>>>                // OnChange is called on every changed character
-80223>>>            //    Procedure OnChange
-80223>>>            //        String sValue
-80223>>>            //    
-80223>>>            //        Get Value to sValue
-80223>>>            //    End_Procedure
-80223>>>            
-80223>>>            End_Object
-80224>>>        End_Object
-80225>>>
-80225>>>        Object oGroup1 is a Group
-80227>>>            Set Size to 29 95
-80228>>>            Set Location to 19 110
-80229>>>            Set Label to "Fecha Final  *"
-80230>>>
-80230>>>            Object TxtFechaFinal is a Form
-80232>>>                Set Size to 13 81
-80233>>>                Set Location to 10 7
-80234>>>                Set Form_Datatype to Mask_Date_Window
-80235>>>                Set Prompt_Object to oMonthCalendarPrompt
-80236>>>                Set Prompt_Button_Mode to PB_PromptOn
+80133>>>
+80133>>>            Object oMarcaje_TipoMarcaje is a cDbCJGridColumn
+80135>>>                Entry_Item TipoMarcaje.Numero
+80136>>>                Set piWidth to 60
+80137>>>                Set psCaption to "# Marcaje"
+80138>>>                Set Prompt_Button_Mode to PB_PromptOn
+80139>>>                Set Prompt_Object of oMarcaje_TipoMarcaje to (ListaTipoMarcaje(Current_Object))
+80140>>>                
+80140>>>            End_Object
+80141>>>
+80141>>>            Object oTipoMarcaje_TipoMarcaje is a cDbCJGridColumn
+80143>>>                Entry_Item TipoMarcaje.TipoMarcaje
+80144>>>                Set piWidth to 60
+80145>>>                Set psCaption to "Marcaje"
+80146>>>                
+80146>>>            End_Object
+80147>>>        End_Object
+80148>>>    End_Object
+80149>>>
+80149>>>End_Object
+80150>        Use Marcajes.rv
+Including file: Marcajes.rv    (D:\Sistemas\Jose\Control-de-Marcajes\AppSrc\Marcajes.rv)
+80150>>>Use Windows.pkg
+80150>>>Use DFRptVw.pkg
+80150>>>Use DFRpt.pkg
+80150>>>Use File_Dlg.Pkg
+80150>>>Use SQLDATE.pkg
+Including file: SQLDATE.PKG    (D:\Sistemas\Jose\Control-de-Marcajes\AppSrc\SQLDATE.PKG)
+80150>>>>>Function fSQL_date Global Date d_Fecha Returns String
+80152>>>>>    Local String  s_Fecha
+80152>>>>>    Local Integer i_Formato
+80152>>>>>
+80152>>>>>    Get_date_format to i_formato
+80153>>>>>
+80153>>>>>    Move "'" to s_Fecha
+80154>>>>>    //Move "" to s_Fecha
+80154>>>>>
+80154>>>>>    If i_Formato eq 0 Begin  // Fecha formato USA mes/dia/año
+80156>>>>>        Append s_Fecha (Mid(d_Fecha,4,7))
+80157>>>>>        Append s_Fecha (Mid(d_Fecha,2,1))
+80158>>>>>        Append s_Fecha (Mid(d_Fecha,2,4))
+80159>>>>>    End
+80159>>>>>>
+80159>>>>>    If i_formato eq 1 Begin  // Fecha formato europeo dia/mes/año
+80161>>>>>        Append s_Fecha (Mid(d_Fecha,4,7))
+80162>>>>>        Append s_Fecha (Mid(d_Fecha,2,4))
+80163>>>>>        Append s_Fecha (Mid(d_Fecha,2,1))
+80164>>>>>    End
+80164>>>>>>
+80164>>>>>    If i_formato eq 2 Begin  // Fecha formato militar año/mes/dia
+80166>>>>>        Append s_Fecha (Mid(d_Fecha,4,1))
+80167>>>>>        Append s_Fecha (Mid(d_Fecha,2,6))
+80168>>>>>        Append s_Fecha (Mid(d_Fecha,2,9))
+80169>>>>>    End
+80169>>>>>>
+80169>>>>>
+80169>>>>>    Append s_Fecha "'"
+80170>>>>>    Function_Return s_Fecha
+80171>>>>>End_Function
+80172>>>Use cNacionalidadDataDictionary.dd
+80172>>>Use cEmpleadoDataDictionary.dd
+80172>>>Use cTipoMarcajeDataDictionary.dd
+80172>>>Use cMarcajeDataDictionary.dd
+80172>>>Use DFEntry.pkg
+80172>>>Use dfclient.pkg
+80172>>>Use MonthCalendarPrompt.dg
+80172>>>
+80172>>>Activate_View Activate_Marcajes for Marcajes
+80182>>>>
+80182>>>Object Marcajes is a ReportView
+80184>>>    Object oTipoMarcaje_DD is a cTipoMarcajeDataDictionary
+80186>>>    End_Object
+80187>>>
+80187>>>    Object oNacionalidad_DD is a cNacionalidadDataDictionary
+80189>>>    End_Object
+80190>>>
+80190>>>    Object oEmpleado_DD is a cEmpleadoDataDictionary
+80192>>>        Set DDO_Server to oNacionalidad_DD
+80193>>>    End_Object
+80194>>>
+80194>>>    Object oMarcaje_DD is a cMarcajeDataDictionary
+80196>>>        Set DDO_Server to oTipoMarcaje_DD
+80197>>>        Set DDO_Server to oEmpleado_DD
+80198>>>    End_Object
+80199>>>
+80199>>>    Set Main_DD to oMarcaje_DD
+80200>>>    Set Server to oMarcaje_DD
+80201>>>
+80201>>>    Set Location to 7 11
+80202>>>    Set Size to 190 258
+80203>>>    Set Label to "Marcajes"
+80204>>>
+80204>>>    Object oSaveAsDialog is a SaveAsDialog
+80206>>>    End_Object
+80207>>>
+80207>>>    Procedure StartReport
+80210>>>        Integer iOutputDevice 
+80210>>>        Handle hoWorkspace
+80210>>>        String sFileName sCurrentDirectory sDataPath
+80210>>>    
+80210>>>        Get Output_Device_Mode to iOutputDevice
+80211>>>    
+80211>>>        Case Begin
+80211>>>            Case (iOutputDevice = PRINT_TO_WINDOW)
+80213>>>                Get_Current_Directory to sCurrentDirectory
+80214>>>                Get phoWorkspace Of ghoApplication to hoWorkspace
+80215>>>                Get psDataPath Of hoWorkspace to sDataPath
+80216>>>                Get PathAtIndex Of hoWorkspace sDataPath 1 to sDataPath
+80217>>>                Set_Directory sDataPath
+80218>>>                Make_Temp_File "TXT" sFileName
+80219>>>                Set_Directory sCurrentDirectory
+80220>>>                If (Right(sDataPath, 1) <> Sysconf(SYSCONF_DIR_SEPARATOR)) Begin
+80222>>>                    Move (sDataPath - Sysconf(SYSCONF_DIR_SEPARATOR)) To sDataPath
+80223>>>                End
+80223>>>>
+80223>>>                Move (sDataPath - sFileName) to sFileName
+80224>>>                Set Output_Device_Name to sFileName
+80225>>>                Case Break
+80226>>>            
+80226>>>        Case End
+80226>>>    
+80226>>>        Send Run_Report
+80227>>>    
+80227>>>        If (iOutputDevice = PRINT_TO_WINDOW) Begin
+80229>>>            Runprogram Background "NotePad" sFileName
+80230>>>            EraseFile sFileName
+80231>>>>
+80231>>>        End
+80231>>>>
+80231>>>    End_Procedure
+80232>>>    
+80232>>>    Object oBasicReport is a BasicReport
+80234>>>        // Set Server To DDOName
+80234>>>        
+80234>>>        // Create a new file with the images for the report. Include this filename in the
+80234>>>        // component with a USE statement. Replace the HeaderSection, BodySection, FooterSection
+80234>>>        // with the imagenames you've created.
+80234>>>        // NOTE: 
+80234>>>        // - Image names must be unique throughout the program
+80234>>>        // - Images start at the first column of the sourcecode in the format /ImageName
+80234>>>        // - End of an image is the start of a new one or a /*
+80234>>>
+80234>>>        Function Starting_Main_Report Returns Integer
+80237>>>            Integer iRetval
 80237>>>            
-80237>>>                // OnChange is called on every changed character
-80237>>>            //    Procedure OnChange
-80237>>>            //        String sValue
-80237>>>            //    
-80237>>>            //        Get Value to sValue
-80237>>>            //    End_Procedure
-80237>>>            
-80237>>>            End_Object
-80238>>>        End_Object
-80239>>>    End_Object
-80240>>>
-80240>>>    Object oDbGroup1 is a dbGroup
-80242>>>        Set Size to 80 216
-80243>>>        Set Location to 13 20
-80244>>>        Set Label to "Seleccionar filtros para el reporte"
-80245>>>
-80245>>>        Object TxtPais is a Form
-80247>>>            Set Size to 13 40
-80248>>>            Set Location to 22 55
-80249>>>            Set Label to "Pais :"
-80250>>>            Set Label_Col_Offset to 20
-80251>>>            Set Prompt_Button_Mode to PB_PromptOn
-80252>>>            Set Prompt_Object to (ListaNacionalidad(TxtPais))
-80253>>>            Set Aux_Value to 0
-80254>>>            //Set Form_Datatype to Mask_Numeric_Window
-80254>>>            //Set Value to Default_Numeric_Mask
-80254>>>           
-80254>>>
-80254>>>            Procedure OnChange
-80257>>>                Forward Send OnChange
-80259>>>                Set Label of EtiquetaPais to Nacionalidad.Pais
-80260>>>                
-80260>>>                
-80260>>>                
-80260>>>            End_Procedure
-80261>>>        
-80261>>>            // OnChange is called on every changed character
-80261>>>        //    Procedure OnChange
-80261>>>        //        String sValue
-80261>>>        //    
-80261>>>        //        Get Value to sValue
-80261>>>        //    End_Procedure
-80261>>>        
-80261>>>        End_Object
-80262>>>
-80262>>>        Object TxtEmpleado is a Form
-80264>>>            Set Size to 13 40
-80265>>>            Set Location to 44 55
-80266>>>            Set Label to "Empleado :"
-80267>>>            Set Label_Col_Offset to 38
-80268>>>            Set Prompt_Button_Mode to PB_PromptOn
-80269>>>            Set Prompt_Object to (ListaEmpleado(TxtEmpleado))            
-80270>>>            Set Aux_Value to 0
-80271>>>         
-80271>>>
-80271>>>            Procedure OnChange
-80274>>>                Forward Send OnChange 
-80276>>>                Set Label of EtiquetaEmpleado to (Trim(Empleado.PrimerNombre) + ' ' + Trim(Empleado.SegundoNombre) + ' ' + Trim(Empleado.PrimerApellido) + ' ' + Trim(Empleado.SegundoApellido))
-80277>>>               
-80277>>>            End_Procedure
-80278>>>        
-80278>>>            // OnChange is called on every changed character
-80278>>>        //    Procedure OnChange
-80278>>>        //        String sValue
-80278>>>        //    
-80278>>>        //        Get Value to sValue
-80278>>>        //    End_Procedure
-80278>>>        
-80278>>>        End_Object
-80279>>>
-80279>>>        Object EtiquetaEmpleado is a TextBox
-80281>>>            Set Size to 10 32
-80282>>>            Set Location to 46 99
-80283>>>            //Set Label to (Trim(Empleado.PrimerNombre) + ' ' + Trim(Empleado.PrimerNombre))
-80283>>>        End_Object
-80284>>>
-80284>>>        Object EtiquetaPais is a TextBox
-80286>>>            Set Size to 10 32
-80287>>>            Set Location to 25 100
-80288>>>            //Set Label to (Trim(Empleado.PrimerNombre) + ' ' + Trim(Empleado.PrimerNombre))
-80288>>>        End_Object
-80289>>>    End_Object
+80237>>>            Forward Get Starting_Main_Report to iRetval
+80239>>>            
+80239>>>            Function_Return iRetval
+80240>>>        End_Function
+80241>>>
+80241>>>       
+80241>>>
+80241>>>    End_Object
+80242>>>
+80242>>>    Object GrupoRangoFechas is a Group
+80244>>>        Set Size to 57 217
+80245>>>        Set Location to 97 20
+80246>>>        Set Label to "Rango de Fechas"
+80247>>>
+80247>>>        Object oGroup1 is a Group
+80249>>>            Set Size to 29 95
+80250>>>            Set Location to 19 6
+80251>>>            Set Label to "Fecha Inicial   *"
+80252>>>
+80252>>>            Object TxtFechaInicial is a Form
+80254>>>                Set Size to 13 81
+80255>>>                Set Location to 10 7
+80256>>>                Set Form_Datatype to Mask_Date_Window
+80257>>>                Set Prompt_Object to oMonthCalendarPrompt
+80258>>>                Set Prompt_Button_Mode to PB_PromptOn
+80259>>>            
+80259>>>                // OnChange is called on every changed character
+80259>>>            //    Procedure OnChange
+80259>>>            //        String sValue
+80259>>>            //    
+80259>>>            //        Get Value to sValue
+80259>>>            //    End_Procedure
+80259>>>            
+80259>>>            End_Object
+80260>>>        End_Object
+80261>>>
+80261>>>        Object oGroup1 is a Group
+80263>>>            Set Size to 29 95
+80264>>>            Set Location to 19 110
+80265>>>            Set Label to "Fecha Final  *"
+80266>>>
+80266>>>            Object TxtFechaFinal is a Form
+80268>>>                Set Size to 13 81
+80269>>>                Set Location to 10 7
+80270>>>                Set Form_Datatype to Mask_Date_Window
+80271>>>                Set Prompt_Object to oMonthCalendarPrompt
+80272>>>                Set Prompt_Button_Mode to PB_PromptOn
+80273>>>            
+80273>>>                // OnChange is called on every changed character
+80273>>>            //    Procedure OnChange
+80273>>>            //        String sValue
+80273>>>            //    
+80273>>>            //        Get Value to sValue
+80273>>>            //    End_Procedure
+80273>>>            
+80273>>>            End_Object
+80274>>>        End_Object
+80275>>>    End_Object
+80276>>>
+80276>>>    Object oDbGroup1 is a dbGroup
+80278>>>        Set Size to 80 216
+80279>>>        Set Location to 13 20
+80280>>>        Set Label to "Seleccionar filtros para el reporte"
+80281>>>
+80281>>>        Object TxtPais is a Form
+80283>>>            Set Size to 13 40
+80284>>>            Set Location to 22 55
+80285>>>            Set Label to "Pais :"
+80286>>>            Set Label_Col_Offset to 20
+80287>>>            Set Prompt_Button_Mode to PB_PromptOn
+80288>>>            Set Prompt_Object to (ListaNacionalidad(TxtPais))
+80289>>>            Set Aux_Value to 0
+80290>>>            //Set Form_Datatype to Mask_Numeric_Window
+80290>>>            //Set Value to Default_Numeric_Mask
+80290>>>           
 80290>>>
-80290>>>    Object BtnGenerar is a Button  // ********Boton Generar
-80292>>>        Set Size to 14 68
-80293>>>        Set Location to 162 23
-80294>>>        Set Label to "Generar"
-80295>>>    
-80295>>>        // fires when the button is clicked
-80295>>>        Procedure OnClick
-80298>>>            Forward Send OnClick False 
-80300>>>     //      String Mensaje
-80300>>>     //      Variant obtener
-80300>>>     //      
-80300>>>     //      Get Value of TxtPais to obtener
-80300>>>     //     
-80300>>>     //     If ( obtener = rdString) Begin           
-80300>>>     //          Send Info_Box "Solo se admiten valores Numericos"
-80300>>>     //          Procedure_Return
-80300>>>     //     End 
-80300>>>     //     Else Begin
-80300>>>     //         If (obtener = 0) Begin
-80300>>>     //              Move "Pais no Seleccionado" to Mensaje                     
-80300>>>     //         End
-80300>>>     //         Else Begin
-80300>>>     //             Move obtener to Mensaje
-80300>>>     //            
-80300>>>     //         End
-80300>>>     //     End
-80300>>>     //     
-80300>>>         Send GenerarReporteMarcaje
-80301>>>            
-80301>>>            
-80301>>>        End_Procedure
-80302>>>    
-80302>>>    End_Object
-80303>>>
-80303>>>    Object BtnNuevo is a Button
-80305>>>        Set Size to 14 68
-80306>>>        Set Location to 162 108
-80307>>>        Set Label to "Nuevo"
-80308>>>    
-80308>>>        // fires when the button is clicked
-80308>>>        Procedure OnClick
-80311>>>             Number Dato 
-80311>>>             String Mensaje
-80311>>>            
-80311>>>            Get Value of TxtPais to Dato
-80312>>>            
-80312>>>            If (Dato = 0) Begin
-80314>>>                Move "Pais no Seleccionado" to Mensaje
-80315>>>            End
-80315>>>>
-80315>>>            Else Begin
-80316>>>               Get Label of EtiquetaPais to Mensaje
-80317>>>            End
-80317>>>>
-80317>>>            
-80317>>>        End_Procedure
-80318>>>    
-80318>>>    End_Object
-80319>>>    
-80319>>>    Procedure GenerarReporteMarcaje
-80322>>>        Integer DatoPais
-80322>>>        Integer DatoEmpleado
-80322>>>        Global_Variable Date FechaInicial
-80322>>>        Global_Variable Date FechaFinal
-80322>>>        Date ConteoFecha
-80322>>>        String Titulo
-80322>>>        String Parametro        
-80322>>>        String Mensaje
-80322>>>        Global_Variable Boolean EstadoPais, EstadoEmpleado
-80322>>>        
-80322>>>        
-80322>>>        //Inicializacion de Varibales
-80322>>>        Move 0 to DatoPais
-80323>>>        Move 0 to DatoEmpleado
-80324>>>        Move '' to FechaInicial
-80325>>>        Move '' to FechaFinal
-80326>>>        Move '' to Titulo
-80327>>>        Move '' to Parametro        
-80328>>>        Move False to EstadoEmpleado
-80329>>>        Move False to EstadoPais
-80330>>>        
-80330>>>        // Asignacion de valores a variales
-80330>>>        Get Value of TxtPais to DatoPais
-80331>>>        Get Value of TxtEmpleado to DatoEmpleado
-80332>>>        Get Value of TxtFechaInicial to FechaInicial
-80333>>>        Get Value of TxtFechaFinal to FechaFinal
-80334>>>        
-80334>>>        // **PAIS**
-80334>>>        If (DatoPais = 0) Begin
-80336>>>             Move 'No se inserto ningun dato' to Mensaje                   
-80337>>>        End
-80337>>>>
-80337>>>        Else Begin 
-80338>>>            If (Trim(DatoPais)) ne 0 Begin
-80340>>>                Clear Nacionalidad  //tabla
-80341>>>                Move (Trim(DatoPais)) to Nacionalidad.Numero  //atributo codiog de la tabla Marcajestable
-80342>>>                Find eq Nacionalidad by Index.1   // busca segun el indice
-80343>>>>
-80343>>>                If [not Found] Begin
-80345>>>                    Send Info_Box 'El Pais Seleecionado no Existe'                    
-80346>>>                    Procedure_Return // retorna el procedimienot para hacer uso del sisema
-80347>>>                End
-80347>>>>
-80347>>>                Else Begin
-80348>>>                    Move True to EstadoPais
-80349>>>                End
-80349>>>>
-80349>>>            End
-80349>>>>
-80349>>>        End
-80349>>>>
-80349>>>        
-80349>>>        // **EMPLEADO**
-80349>>>        If (DatoEmpleado = 0) Begin
-80351>>>            Move 'No se inserto ningun dato' to Mensaje  
-80352>>>                                
-80352>>>        End
-80352>>>>
-80352>>>        Else Begin
-80353>>>           If (Trim(DatoEmpleado)) ne 0 Begin
-80355>>>                Clear Empleado  //tabla
-80356>>>                Move (Trim(DatoEmpleado)) to Empleado.Numero  //atributo codiog de la tabla Marcajestable
-80357>>>                Find eq Empleado by Index.1   // busca segun el indice
-80358>>>>
-80358>>>                If [not Found] Begin
-80360>>>                    Send Info_Box 'El Empleado Seleccionado no Existe'                    
-80361>>>                    Procedure_Return // retorna el procedimienot para hacer uso del sisema
-80362>>>                End
-80362>>>>
-80362>>>                Else Begin
-80363>>>                    Move True to EstadoEmpleado
-80364>>>                End
-80364>>>>
-80364>>>                
-80364>>>          End
-80364>>>>
-80364>>>            
-80364>>>        End
-80364>>>>
-80364>>>        
-80364>>>        //  **FECHAS**
-80364>>>        Indicate AceptarFecha True        
-80365>>>        Move ("01/01/1900") to ConteoFecha
+80290>>>            Procedure OnChange
+80293>>>                Forward Send OnChange
+80295>>>                Set Label of EtiquetaPais to Nacionalidad.Pais
+80296>>>                
+80296>>>                
+80296>>>                
+80296>>>            End_Procedure
+80297>>>        
+80297>>>            // OnChange is called on every changed character
+80297>>>        //    Procedure OnChange
+80297>>>        //        String sValue
+80297>>>        //    
+80297>>>        //        Get Value to sValue
+80297>>>        //    End_Procedure
+80297>>>        
+80297>>>        End_Object
+80298>>>
+80298>>>        Object TxtEmpleado is a Form
+80300>>>            Set Size to 13 40
+80301>>>            Set Location to 44 55
+80302>>>            Set Label to "Empleado :"
+80303>>>            Set Label_Col_Offset to 38
+80304>>>            Set Prompt_Button_Mode to PB_PromptOn
+80305>>>            Set Prompt_Object to (ListaEmpleado(TxtEmpleado))            
+80306>>>            Set Aux_Value to 0
+80307>>>         
+80307>>>
+80307>>>            Procedure OnChange
+80310>>>                Forward Send OnChange 
+80312>>>                Set Label of EtiquetaEmpleado to (Trim(Empleado.PrimerNombre) + ' ' + Trim(Empleado.SegundoNombre) + ' ' + Trim(Empleado.PrimerApellido) + ' ' + Trim(Empleado.SegundoApellido))
+80313>>>               
+80313>>>            End_Procedure
+80314>>>        
+80314>>>            // OnChange is called on every changed character
+80314>>>        //    Procedure OnChange
+80314>>>        //        String sValue
+80314>>>        //    
+80314>>>        //        Get Value to sValue
+80314>>>        //    End_Procedure
+80314>>>        
+80314>>>        End_Object
+80315>>>
+80315>>>        Object EtiquetaEmpleado is a TextBox
+80317>>>            Set Size to 10 32
+80318>>>            Set Location to 46 99
+80319>>>            //Set Label to (Trim(Empleado.PrimerNombre) + ' ' + Trim(Empleado.PrimerNombre))
+80319>>>        End_Object
+80320>>>
+80320>>>        Object EtiquetaPais is a TextBox
+80322>>>            Set Size to 10 32
+80323>>>            Set Location to 25 100
+80324>>>            //Set Label to (Trim(Empleado.PrimerNombre) + ' ' + Trim(Empleado.PrimerNombre))
+80324>>>        End_Object
+80325>>>    End_Object
+80326>>>
+80326>>>    Object BtnGenerar is a Button  // ********Boton Generar
+80328>>>        Set Size to 14 68
+80329>>>        Set Location to 162 23
+80330>>>        Set Label to "Generar"
+80331>>>    
+80331>>>        // fires when the button is clicked
+80331>>>        Procedure OnClick
+80334>>>            Forward Send OnClick False 
+80336>>>     //      String Mensaje
+80336>>>     //      Variant obtener
+80336>>>     //      
+80336>>>     //      Get Value of TxtPais to obtener
+80336>>>     //     
+80336>>>     //     If ( obtener = rdString) Begin           
+80336>>>     //          Send Info_Box "Solo se admiten valores Numericos"
+80336>>>     //          Procedure_Return
+80336>>>     //     End 
+80336>>>     //     Else Begin
+80336>>>     //         If (obtener = 0) Begin
+80336>>>     //              Move "Pais no Seleccionado" to Mensaje                     
+80336>>>     //         End
+80336>>>     //         Else Begin
+80336>>>     //             Move obtener to Mensaje
+80336>>>     //            
+80336>>>     //         End
+80336>>>     //     End
+80336>>>     //     
+80336>>>         Send GenerarReporteMarcaje
+80337>>>            
+80337>>>            
+80337>>>        End_Procedure
+80338>>>    
+80338>>>    End_Object
+80339>>>
+80339>>>    Object BtnNuevo is a Button
+80341>>>        Set Size to 14 68
+80342>>>        Set Location to 162 108
+80343>>>        Set Label to "Nuevo"
+80344>>>    
+80344>>>        // fires when the button is clicked
+80344>>>        Procedure OnClick
+80347>>>             Number Dato 
+80347>>>             String Mensaje
+80347>>>            
+80347>>>            Get Value of TxtPais to Dato
+80348>>>            
+80348>>>            If (Dato = 0) Begin
+80350>>>                Move "Pais no Seleccionado" to Mensaje
+80351>>>            End
+80351>>>>
+80351>>>            Else Begin
+80352>>>               Get Label of EtiquetaPais to Mensaje
+80353>>>            End
+80353>>>>
+80353>>>            
+80353>>>        End_Procedure
+80354>>>    
+80354>>>    End_Object
+80355>>>    
+80355>>>    Procedure GenerarReporteMarcaje
+80358>>>        Integer DatoPais
+80358>>>        Integer DatoEmpleado
+80358>>>        Global_Variable Date FechaInicial
+80358>>>        Global_Variable Date FechaFinal
+80358>>>        Date ConteoFecha
+80358>>>        String Titulo
+80358>>>        String Parametro        
+80358>>>        String Mensaje
+80358>>>        Global_Variable Boolean EstadoPais, EstadoEmpleado
+80358>>>        
+80358>>>        
+80358>>>        //Inicializacion de Varibales
+80358>>>        Move 0 to DatoPais
+80359>>>        Move 0 to DatoEmpleado
+80360>>>        Move '' to FechaInicial
+80361>>>        Move '' to FechaFinal
+80362>>>        Move '' to Titulo
+80363>>>        Move '' to Parametro        
+80364>>>        Move False to EstadoEmpleado
+80365>>>        Move False to EstadoPais
 80366>>>        
-80366>>>         If (FechaInicial <> '' or FechaFinal <> '')
-80368>>>          Begin
-80368>>>>
-80368>>>            If ( (FechaInicial < ConteoFecha) or (FechaFinal < ConteoFecha))
-80370>>>             Begin 
-80370>>>>
-80370>>>                Send Info_Box 'Ingrese Fechas V lidas'
-80371>>>                Indicate AceptarFecha False
-80372>>>                Procedure_Return
-80373>>>            End
-80373>>>>
-80373>>>            Else If (FechaInicial > FechaFinal ) Begin
-80376>>>                 Send Info_Box 'La fecha Inicial no debe ser mayor a la fecha final' 'Error de Fechas'
-80377>>>                Indicate AceptarFecha False            
-80378>>>            End
-80378>>>>
-80378>>>            Else If (FechaInicial >= FechaFinal ) Begin
-80381>>>            
-80381>>>            [ AceptarFecha ] Send Run_Report to (ReporteFiltroFechas(Current_Object))
-80382>>>             End
-80382>>>>
-80382>>>         End
-80382>>>>
-80382>>>         Else Begin
-80383>>>            Send Info_Box 'Las Fechas son Requeridas'
-80384>>>            Procedure_Return
-80385>>>         End
-80385>>>>
-80385>>>         
-80385>>>        // Send Run_Report to (ReporteFiltroFechas(Current_Object))
-80385>>>             Set Report_Name of (ReporteFiltroFechas(Current_Object)) to "ReporteMacajeSM.rpt"
-80386>>>             Send Run_Report to (ReporteFiltroFechas(Current_Object))
-80387>>>        
-80387>>>    End_Procedure
-80388>>>    
-80388>>>     // **Creacion de Objeto**
-80388>>>      Object ReporteFiltroFechas is a WinQLReport
-80390>>>        
-80390>>>        Set Output_Destination to WQL_PRINT_TO_WINDOW
-80391>>>        
-80391>>>            Procedure OnInitializeReport
-80394>>>                String FullQuery
-80394>>>                Move '' to FullQuery
-80395>>>                Forward Send OnInitializeReport  // lanzamos el iniciador del reporte
-80397>>>                If (EstadoPais) Begin                
-80399>>>                    Append FullQuery '{Nacionalidad.Numero} = '
-80400>>>                    Append FullQuery Nacionalidad.Numero
-80401>>>                    Append FullQuery 'and '
-80402>>>                End
-80402>>>>
-80402>>>                
-80402>>>                // ** Validacion y creacion de Query**
-80402>>>                If (EstadoEmpleado) Begin 
-80404>>>                    Append FullQuery '{Empleado.Numero} = '
-80405>>>                    Append FullQuery Empleado.Numero ' and '
-80407>>>                     
-80407>>>                End
-80407>>>>
-80407>>>                
-80407>>>                Append FullQuery (Mid(FechaInicial,4,7))
-80408>>>                
-80408>>>             End_Procedure
-80409>>>        
-80409>>>      End_Object
-80410>>>      
-80410>>>      
-80410>>> //  {Nacionalidad.Numero} = 1 and
-80410>>> //  {Marcaje.FechaMarcaje} in "2022-05-05" to "2022-05-09" and
-80410>>>//   {Empleado.Numero} = 2
-80410>>>      
-80410>>>    
-80410>>>    
-80410>>>End_Object
-80411>
-80411>        Procedure Activate_About
-80414>            Send DoAbout "" "" "" "" ""
-80415>        End_Procedure
-80416>
-80416>    End_Object
-80417>
-80417>End_Object
-80418>
-80418>Start_UI
-80419>
-80419>//************************** end of WindowsProject.tpl for Spanish **************
-80419>
+80366>>>        // Asignacion de valores a variales
+80366>>>        Get Value of TxtPais to DatoPais
+80367>>>        Get Value of TxtEmpleado to DatoEmpleado
+80368>>>        Get Value of TxtFechaInicial to FechaInicial
+80369>>>        Get Value of TxtFechaFinal to FechaFinal
+80370>>>        
+80370>>>        // **PAIS**
+80370>>>        //If (DatoPais = 0) Begin
+80370>>>        //     Move 'No se inserto ningun dato' to Mensaje                   
+80370>>>        //End
+80370>>>        //Else Begin 
+80370>>>            If (Trim(DatoPais)) ne 0 Begin
+80372>>>                Clear Nacionalidad  //tabla
+80373>>>                Move (Trim(DatoPais)) to Nacionalidad.Numero  //atributo codiog de la tabla Marcajestable
+80374>>>                Find eq Nacionalidad by Index.1   // busca segun el indice
+80375>>>>
+80375>>>                If [not Found] Begin
+80377>>>                    Send Info_Box 'El Pais Seleecionado no Existe'                    
+80378>>>                    Procedure_Return // retorna el procedimienot para hacer uso del sisema
+80379>>>                End
+80379>>>>
+80379>>>                Else Begin
+80380>>>                    Move True to EstadoPais
+80381>>>                End
+80381>>>>
+80381>>>            End
+80381>>>>
+80381>>>        //End
+80381>>>        
+80381>>>        // **EMPLEADO**
+80381>>>        If (DatoEmpleado = 0) Begin
+80383>>>            Move 'No se inserto ningun dato' to Mensaje  
+80384>>>                                
+80384>>>        End
+80384>>>>
+80384>>>        Else Begin
+80385>>>           If (Trim(DatoEmpleado)) ne 0 Begin
+80387>>>                Clear Empleado  //tabla
+80388>>>                Move (Trim(DatoEmpleado)) to Empleado.Numero  //atributo codiog de la tabla Marcajestable
+80389>>>                Find eq Empleado by Index.1   // busca segun el indice
+80390>>>>
+80390>>>                If [not Found] Begin
+80392>>>                    Send Info_Box 'El Empleado Seleccionado no Existe'                    
+80393>>>                    Procedure_Return // retorna el procedimienot para hacer uso del sisema
+80394>>>                End
+80394>>>>
+80394>>>                Else Begin
+80395>>>                    Move True to EstadoEmpleado
+80396>>>                End
+80396>>>>
+80396>>>                
+80396>>>          End
+80396>>>>
+80396>>>            
+80396>>>        End
+80396>>>>
+80396>>>        
+80396>>>        //  **FECHAS**
+80396>>>        Indicate AceptarFecha True        
+80397>>>        Move ("01/01/1900") to ConteoFecha
+80398>>>        Set Report_Name of (ReporteFiltroFechas(Current_Object)) to "ReporteMacajeSM.rpt"
+80399>>>        
+80399>>>         If (FechaInicial <> '' or FechaFinal <> '')
+80401>>>          Begin
+80401>>>>
+80401>>>            If ( (FechaInicial < ConteoFecha) or (FechaFinal < ConteoFecha))
+80403>>>             Begin 
+80403>>>>
+80403>>>                Send Info_Box 'Ingrese Fechas V lidas'
+80404>>>                Indicate AceptarFecha False
+80405>>>                Procedure_Return
+80406>>>            End
+80406>>>>
+80406>>>            Else If (FechaInicial > FechaFinal ) Begin
+80409>>>                 Send Info_Box 'La fecha Inicial no debe ser mayor a la fecha final' 'Error de Fechas'
+80410>>>                Indicate AceptarFecha False            
+80411>>>            End
+80411>>>>
+80411>>>            Else If (FechaInicial <= FechaFinal ) Begin
+80414>>>            
+80414>>>            [ AceptarFecha ] Send Run_Report to (ReporteFiltroFechas(Current_Object))
+80415>>>             End
+80415>>>>
+80415>>>         End
+80415>>>>
+80415>>>         Else Begin
+80416>>>            Send Info_Box 'Las Fechas son Requeridas'
+80417>>>            Procedure_Return
+80418>>>         End
+80418>>>>
+80418>>>         
+80418>>>        // Send Run_Report to (ReporteFiltroFechas(Current_Object))
+80418>>>             
+80418>>>             //Send Run_Report to (ReporteFiltroFechas(Current_Object))
+80418>>>        
+80418>>>    End_Procedure
+80419>>>    
+80419>>>     // **Creacion de Objeto**
+80419>>>      Object ReporteFiltroFechas is a WinQLReport
+80421>>>        
+80421>>>        Set Output_Destination to WQL_PRINT_TO_WINDOW
+80422>>>        
+80422>>>            Procedure OnInitializeReport
+80425>>>                String FullQuery sFechaDel sFechaAl
+80425>>>                Move (fSQL_date(FechaInicial)) to sFechaDel
+80426>>>                Move (fSQL_date(FechaFinal)) to sFechaAl
+80427>>>                Move '' to FullQuery
+80428>>>                Forward Send OnInitializeReport  // lanzamos el iniciador del reporte
+80430>>>                If (EstadoPais) Begin                
+80432>>>                    Append FullQuery '{Nacionalidad.Numero} = '
+80433>>>                    Append FullQuery Nacionalidad.Numero
+80434>>>                    Append FullQuery 'and '
+80435>>>                End
+80435>>>>
+80435>>>                
+80435>>>                // ** Validacion y creacion de Query**
+80435>>>                If (EstadoEmpleado) Begin 
+80437>>>                    Append FullQuery '{Empleado.Numero} = '
+80438>>>                    Append FullQuery Empleado.Numero ' and '
+80440>>>                     
+80440>>>                End
+80440>>>>
+80440>>>                
+80440>>>                Append FullQuery '{Marcaje.FechaMarcaje} >= ' sFechaDel ' and '
+80443>>>                Append FullQuery '{Marcaje.FechaMarcaje} <= ' sFechaAl 
+80445>>>                
+80445>>>                Set SelectionFormula to FullQuery
+80446>>>                Showln FullQuery
+80448>>>                
+80448>>>             End_Procedure
+80449>>>        
+80449>>>      End_Object
+80450>>>      
+80450>>>      
+80450>>> //  {Nacionalidad.Numero} = 1 and
+80450>>> //  {Marcaje.FechaMarcaje} in "2022-05-05" to "2022-05-09" and
+80450>>>//   {Empleado.Numero} = 2
+80450>>>      
+80450>>>    
+80450>>>    
+80450>>>End_Object
+80451>
+80451>        Procedure Activate_About
+80454>            Send DoAbout "" "" "" "" ""
+80455>        End_Procedure
+80456>
+80456>    End_Object
+80457>
+80457>End_Object
+80458>
+80458>Start_UI
+80459>
+80459>//************************** end of WindowsProject.tpl for Spanish **************
+80459>
 Summary
 Memory Available: 2147483646
 Total Warnings : 0
 Total Errors   : 0
-Total Symbols  : 45645
+Total Symbols  : 45654
 Total Resources: 0
-Total Commands : 80418
+Total Commands : 80458
 Total Windows  : 1
 Total Pages    : 1
-Static Data    : 492905
-Message area   : 557020
-Total Blocks   : 28834
+Static Data    : 493340
+Message area   : 557135
+Total Blocks   : 28847

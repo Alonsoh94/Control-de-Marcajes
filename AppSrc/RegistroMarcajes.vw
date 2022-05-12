@@ -71,6 +71,20 @@ Object RegistroMarcajes is a dbView
                 Set peTextAlignment to xtpAlignmentCenter
                 Set pbResizable to False
             End_Object
+            
+            Object oEmpleado_Nombre is a cDbCJGridColumn
+                //Set Value to Empleado.PrimerNombre
+                Set piWidth to 150
+                Set psCaption to "Nombres"
+                Set pbFocusable to False
+                
+                Procedure OnSetCalculatedValue String ByRef sValue
+                    
+                    Move '' to sValue
+                    Append sValue (Trim(Empleado.PrimerNombre)) ' ' (Trim(Empleado.SegundoNombre))
+                End_Procedure
+
+            End_Object            
 
             Object oEmpleado_PrimerNombre is a cDbCJGridColumn
                 Entry_Item Empleado.PrimerNombre
