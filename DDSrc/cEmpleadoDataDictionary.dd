@@ -1,0 +1,64 @@
+Use DataDict.pkg
+
+Open Empleado
+Open Nacionalidad
+Open Marcaje
+Open Autoincrementable
+
+Register_Object ListaEmpleado
+Register_Object ListaNacionalidad
+
+Class cEmpleadoDataDictionary is a DataDictionary
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to Empleado.File_Number
+
+        Set Add_System_File to Autoincrementable.File_Number DD_Lock_On_All
+
+        Set Add_Client_File to Marcaje.File_Number
+
+        Set Add_Server_File to Nacionalidad.File_Number
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+        Set Field_Option Field Empleado.Numero DD_AUTOFIND to True
+        Set Key_Field_State Field Empleado.Numero to True
+        Set Field_Auto_Increment Field Empleado.Numero to File_Field Autoincrementable.NumEmpleado
+        Set Field_Prompt_Object Field Empleado.Numero to ListaEmpleado
+
+        Set Field_Option Field Empleado.PrimerNombre DD_CAPSLOCK to True
+        Set Field_Option Field Empleado.PrimerNombre DD_REQUIRED to True
+        Set Field_Option Field Empleado.PrimerNombre DD_AUTOFIND to True
+
+        Set Field_Option Field Empleado.SegundoNombre DD_AUTOFIND to True
+        Set Field_Option Field Empleado.SegundoNombre DD_CAPSLOCK to True
+        Set Field_Option Field Empleado.SegundoNombre DD_REQUIRED to True
+
+        Set Field_Option Field Empleado.PrimerApellido DD_AUTOFIND to True
+        Set Field_Option Field Empleado.PrimerApellido DD_CAPSLOCK to True
+        Set Field_Option Field Empleado.PrimerApellido DD_REQUIRED to True
+
+        Set Field_Option Field Empleado.SegundoApellido DD_AUTOFIND to True
+        Set Field_Option Field Empleado.SegundoApellido DD_CAPSLOCK to True
+        Set Field_Option Field Empleado.SegundoApellido DD_REQUIRED to True
+
+         
+        Set Field_Option Field Empleado.Nacionalidad DD_AUTOFIND to True
+        Set Field_Prompt_Object Field Empleado.Nacionalidad to ListaNacionalidad
+        Set Field_Option Field Empleado.Nacionalidad DD_CAPSLOCK to True
+        Set Field_Option Field Empleado.Nacionalidad DD_REQUIRED to True
+
+    End_Procedure
+
+End_Class
+
+#IFDEF Is$WebApp
+#ELSE
+Use ListaNacionalidad.sl
+
+Use ListaEmpleado.sl
+#ENDIF

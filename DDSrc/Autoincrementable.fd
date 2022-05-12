@@ -1,0 +1,6 @@
+#REPLACE FILE1 Autoincrementable
+#REPLACE Autoincrementable.Recnum |FN1,0
+#REPLACE Autoincrementable.NumEmpleado |FN1,1
+#REPLACE Autoincrementable.NumNacionalidad |FN1,2
+#REPLACE Autoincrementable.NumTipoMarcaje |FN1,3
+#REPLACE Autoincrementable.NumMarcaje |FN1,4

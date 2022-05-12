@@ -1,0 +1,53 @@
+Use DataDict.pkg
+
+Open Marcaje
+Open Empleado
+Open TipoMarcaje
+Open Autoincrementable
+
+Register_Object ListaTipoMarcaje
+Register_Object ListaEmpleado
+
+Class cMarcajeDataDictionary is a DataDictionary
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to Marcaje.File_Number
+
+        Set Add_System_File to Autoincrementable.File_Number DD_Lock_On_All
+
+        Set Add_Server_File to Empleado.File_Number
+        Set Add_Server_File to TipoMarcaje.File_Number
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+        Set Field_Option Field Marcaje.Numero DD_AUTOFIND to True
+        Set Field_Auto_Increment Field Marcaje.Numero to File_Field Autoincrementable.NumMarcaje
+        Set Key_Field_State Field Marcaje.Numero to True
+        Set Field_Option Field Marcaje.Numero DD_DISPLAYONLY to True
+
+        Set Field_Prompt_Object Field Marcaje.Empleado to ListaEmpleado
+        Set Field_Option Field Marcaje.Empleado DD_AUTOFIND to True
+        Set Field_Option Field Marcaje.Empleado DD_CAPSLOCK to True
+        Set Field_Option Field Marcaje.Empleado DD_REQUIRED to True
+
+        Set Field_Option Field Marcaje.FechaMarcaje DD_REQUIRED to True
+
+        Set Field_Option Field Marcaje.HoraMarcaje DD_REQUIRED to True
+
+        Set Field_Prompt_Object Field Marcaje.TipoMarcaje to ListaTipoMarcaje
+        Set Field_Option Field Marcaje.TipoMarcaje DD_AUTOFIND to True
+        Set Field_Option Field Marcaje.TipoMarcaje DD_REQUIRED to True
+
+    End_Procedure
+
+End_Class
+
+#IFDEF Is$WebApp
+#ELSE
+Use ListaEmpleado.sl
+Use ListaTipoMarcaje.sl
+#ENDIF

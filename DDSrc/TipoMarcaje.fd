@@ -1,0 +1,4 @@
+#REPLACE FILE3 TipoMarcaje
+#REPLACE TipoMarcaje.File_Number |CI3
+#REPLACE TipoMarcaje.Numero |FN3,1
+#REPLACE TipoMarcaje.TipoMarcaje |FS3,2

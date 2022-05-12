@@ -1,0 +1,8 @@
+#REPLACE FILE4 Empleado
+#REPLACE Empleado.File_Number |CI4
+#REPLACE Empleado.Numero |FN4,1
+#REPLACE Empleado.PrimerNombre |FS4,2
+#REPLACE Empleado.SegundoNombre |FS4,3
+#REPLACE Empleado.PrimerApellido |FS4,4
+#REPLACE Empleado.SegundoApellido |FS4,5
+#REPLACE Empleado.Nacionalidad |FN4,6
