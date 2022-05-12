@@ -164,7 +164,6 @@ Object Marcajes is a ReportView
                 Forward Send OnChange
                 Set Label of EtiquetaPais to Nacionalidad.Pais
                 
-            
                 
                 
             End_Procedure
@@ -224,26 +223,26 @@ Object Marcajes is a ReportView
         // fires when the button is clicked
         Procedure OnClick
             Forward Send OnClick False 
-             String Mensaje
-             Variant obtener
-             
-             Get Value of TxtPais to obtener
-            
-            If ( obtener = rdString) Begin           
-                 Send Info_Box "Solo se admiten valores Numericos"
-                 Procedure_Return
-            End 
-            Else Begin
-                If (obtener = 0) Begin
-                     Move "Pais no Seleccionado" to Mensaje                     
-                End
-                Else Begin
-                    Move obtener to Mensaje
-                   
-                End
-            End
-            
-            
+     //      String Mensaje
+     //      Variant obtener
+     //      
+     //      Get Value of TxtPais to obtener
+     //     
+     //     If ( obtener = rdString) Begin           
+     //          Send Info_Box "Solo se admiten valores Numericos"
+     //          Procedure_Return
+     //     End 
+     //     Else Begin
+     //         If (obtener = 0) Begin
+     //              Move "Pais no Seleccionado" to Mensaje                     
+     //         End
+     //         Else Begin
+     //             Move obtener to Mensaje
+     //            
+     //         End
+     //     End
+     //     
+         Send GenerarReporteMarcaje
             
             
         End_Procedure
@@ -274,12 +273,139 @@ Object Marcajes is a ReportView
     End_Object
     
     Procedure GenerarReporteMarcaje
+        Integer DatoPais
+        Integer DatoEmpleado
+        Global_Variable Date FechaInicial
+        Global_Variable Date FechaFinal
+        Date ConteoFecha
+        String Titulo
+        String Parametro        
+        String Mensaje
+        Global_Variable Boolean EstadoPais, EstadoEmpleado
         
         
+        //Inicializacion de Varibales
+        Move 0 to DatoPais
+        Move 0 to DatoEmpleado
+        Move '' to FechaInicial
+        Move '' to FechaFinal
+        Move '' to Titulo
+        Move '' to Parametro        
+        Move False to EstadoEmpleado
+        Move False to EstadoPais
+        
+        // Asignacion de valores a variales
+        Get Value of TxtPais to DatoPais
+        Get Value of TxtEmpleado to DatoEmpleado
+        Get Value of TxtFechaInicial to FechaInicial
+        Get Value of TxtFechaFinal to FechaFinal
+        
+        // **PAIS**
+        If (DatoPais = 0) Begin
+             Move 'No se inserto ningun dato' to Mensaje                   
+        End
+        Else Begin 
+            If (Trim(DatoPais)) ne 0 Begin
+                Clear Nacionalidad  //tabla
+                Move (Trim(DatoPais)) to Nacionalidad.Numero  //atributo codiog de la tabla Marcajestable
+                Find eq Nacionalidad by Index.1   // busca segun el indice
+                If [not Found] Begin
+                    Send Info_Box 'El Pais Seleecionado no Existe'                    
+                    Procedure_Return // retorna el procedimienot para hacer uso del sisema
+                End
+                Else Begin
+                    Move True to EstadoPais
+                End
+            End
+        End
+        
+        // **EMPLEADO**
+        If (DatoEmpleado = 0) Begin
+            Move 'No se inserto ningun dato' to Mensaje  
+                                
+        End
+        Else Begin
+           If (Trim(DatoEmpleado)) ne 0 Begin
+                Clear Empleado  //tabla
+                Move (Trim(DatoEmpleado)) to Empleado.Numero  //atributo codiog de la tabla Marcajestable
+                Find eq Empleado by Index.1   // busca segun el indice
+                If [not Found] Begin
+                    Send Info_Box 'El Empleado Seleccionado no Existe'                    
+                    Procedure_Return // retorna el procedimienot para hacer uso del sisema
+                End
+                Else Begin
+                    Move True to EstadoEmpleado
+                End
+                
+          End
+            
+        End
+        
+        //  **FECHAS**
+        Indicate AceptarFecha True        
+        Move ("01/01/1900") to ConteoFecha
+        
+         If (FechaInicial <> '' or FechaFinal <> '')
+          Begin
+            If ( (FechaInicial < ConteoFecha) or (FechaFinal < ConteoFecha))
+             Begin 
+                Send Info_Box 'Ingrese Fechas V lidas'
+                Indicate AceptarFecha False
+                Procedure_Return
+            End
+            Else If (FechaInicial > FechaFinal ) Begin
+                 Send Info_Box 'La fecha Inicial no debe ser mayor a la fecha final' 'Error de Fechas'
+                Indicate AceptarFecha False            
+            End
+            Else If (FechaInicial >= FechaFinal ) Begin
+            
+            [ AceptarFecha ] Send Run_Report to (ReporteFiltroFechas(Current_Object))
+             End
+         End
+         Else Begin
+            Send Info_Box 'Las Fechas son Requeridas'
+            Procedure_Return
+         End
+         
+        // Send Run_Report to (ReporteFiltroFechas(Current_Object))
+             Set Report_Name of (ReporteFiltroFechas(Current_Object)) to "ReporteMacajeSM.rpt"
+             Send Run_Report to (ReporteFiltroFechas(Current_Object))
         
     End_Procedure
-
-  
+    
+     // **Creacion de Objeto**
+      Object ReporteFiltroFechas is a WinQLReport
+        
+        Set Output_Destination to WQL_PRINT_TO_WINDOW
+        
+            Procedure OnInitializeReport
+                String FullQuery
+                Move '' to FullQuery
+                Forward Send OnInitializeReport  // lanzamos el iniciador del reporte
+                If (EstadoPais) Begin                
+                    Append FullQuery '{Nacionalidad.Numero} = '
+                    Append FullQuery Nacionalidad.Numero
+                    Append FullQuery 'and '
+                End
+                
+                // ** Validacion y creacion de Query**
+                If (EstadoEmpleado) Begin 
+                    Append FullQuery '{Empleado.Numero} = '
+                    Append FullQuery Empleado.Numero ' and '
+                     
+                End
+                
+                Append FullQuery (Mid(FechaInicial,4,7))
+                
+             End_Procedure
+        
+      End_Object
+      
+      
+ //  {Nacionalidad.Numero} = 1 and
+ //  {Marcaje.FechaMarcaje} in "2022-05-05" to "2022-05-09" and
+//   {Empleado.Numero} = 2
+      
     
     
 End_Object

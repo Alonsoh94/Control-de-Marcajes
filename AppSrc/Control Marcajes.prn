@@ -7972,7 +7972,6 @@ Including file: Marcajes.rv    (C:\DataFlex Projects\Control Marcajes\AppSrc\Mar
 80257>>>                Forward Send OnChange
 80259>>>                Set Label of EtiquetaPais to Nacionalidad.Pais
 80260>>>                
-80260>>>            
 80260>>>                
 80260>>>                
 80260>>>            End_Procedure
@@ -8032,93 +8031,237 @@ Including file: Marcajes.rv    (C:\DataFlex Projects\Control Marcajes\AppSrc\Mar
 80295>>>        // fires when the button is clicked
 80295>>>        Procedure OnClick
 80298>>>            Forward Send OnClick False 
-80300>>>             String Mensaje
-80300>>>             Variant obtener
-80300>>>             
-80300>>>             Get Value of TxtPais to obtener
+80300>>>     //      String Mensaje
+80300>>>     //      Variant obtener
+80300>>>     //      
+80300>>>     //      Get Value of TxtPais to obtener
+80300>>>     //     
+80300>>>     //     If ( obtener = rdString) Begin           
+80300>>>     //          Send Info_Box "Solo se admiten valores Numericos"
+80300>>>     //          Procedure_Return
+80300>>>     //     End 
+80300>>>     //     Else Begin
+80300>>>     //         If (obtener = 0) Begin
+80300>>>     //              Move "Pais no Seleccionado" to Mensaje                     
+80300>>>     //         End
+80300>>>     //         Else Begin
+80300>>>     //             Move obtener to Mensaje
+80300>>>     //            
+80300>>>     //         End
+80300>>>     //     End
+80300>>>     //     
+80300>>>         Send GenerarReporteMarcaje
 80301>>>            
-80301>>>            If ( obtener = rdString) Begin           
-80303>>>                 Send Info_Box "Solo se admiten valores Numericos"
-80304>>>                 Procedure_Return
-80305>>>            End 
-80305>>>>
-80305>>>            Else Begin
-80306>>>                If (obtener = 0) Begin
-80308>>>                     Move "Pais no Seleccionado" to Mensaje                     
-80309>>>                End
-80309>>>>
-80309>>>                Else Begin
-80310>>>                    Move obtener to Mensaje
-80311>>>                   
-80311>>>                End
-80311>>>>
-80311>>>            End
-80311>>>>
+80301>>>            
+80301>>>        End_Procedure
+80302>>>    
+80302>>>    End_Object
+80303>>>
+80303>>>    Object BtnNuevo is a Button
+80305>>>        Set Size to 14 68
+80306>>>        Set Location to 162 108
+80307>>>        Set Label to "Nuevo"
+80308>>>    
+80308>>>        // fires when the button is clicked
+80308>>>        Procedure OnClick
+80311>>>             Number Dato 
+80311>>>             String Mensaje
 80311>>>            
-80311>>>            
-80311>>>            
-80311>>>            
-80311>>>        End_Procedure
-80312>>>    
-80312>>>    End_Object
-80313>>>
-80313>>>    Object BtnNuevo is a Button
-80315>>>        Set Size to 14 68
-80316>>>        Set Location to 162 108
-80317>>>        Set Label to "Nuevo"
+80311>>>            Get Value of TxtPais to Dato
+80312>>>            
+80312>>>            If (Dato = 0) Begin
+80314>>>                Move "Pais no Seleccionado" to Mensaje
+80315>>>            End
+80315>>>>
+80315>>>            Else Begin
+80316>>>               Get Label of EtiquetaPais to Mensaje
+80317>>>            End
+80317>>>>
+80317>>>            
+80317>>>        End_Procedure
 80318>>>    
-80318>>>        // fires when the button is clicked
-80318>>>        Procedure OnClick
-80321>>>             Number Dato 
-80321>>>             String Mensaje
-80321>>>            
-80321>>>            Get Value of TxtPais to Dato
-80322>>>            
-80322>>>            If (Dato = 0) Begin
-80324>>>                Move "Pais no Seleccionado" to Mensaje
-80325>>>            End
-80325>>>>
-80325>>>            Else Begin
-80326>>>               Get Label of EtiquetaPais to Mensaje
-80327>>>            End
-80327>>>>
-80327>>>            
-80327>>>        End_Procedure
-80328>>>    
-80328>>>    End_Object
-80329>>>    
-80329>>>    Procedure GenerarReporteMarcaje
-80332>>>        
-80332>>>        
-80332>>>        
-80332>>>    End_Procedure
-80333>>>
-80333>>>  
-80333>>>    
-80333>>>    
-80333>>>End_Object
-80334>
-80334>        Procedure Activate_About
-80337>            Send DoAbout "" "" "" "" ""
-80338>        End_Procedure
-80339>
-80339>    End_Object
-80340>
-80340>End_Object
-80341>
-80341>Start_UI
-80342>
-80342>//************************** end of WindowsProject.tpl for Spanish **************
-80342>
+80318>>>    End_Object
+80319>>>    
+80319>>>    Procedure GenerarReporteMarcaje
+80322>>>        Integer DatoPais
+80322>>>        Integer DatoEmpleado
+80322>>>        Global_Variable Date FechaInicial
+80322>>>        Global_Variable Date FechaFinal
+80322>>>        Date ConteoFecha
+80322>>>        String Titulo
+80322>>>        String Parametro        
+80322>>>        String Mensaje
+80322>>>        Global_Variable Boolean EstadoPais, EstadoEmpleado
+80322>>>        
+80322>>>        
+80322>>>        //Inicializacion de Varibales
+80322>>>        Move 0 to DatoPais
+80323>>>        Move 0 to DatoEmpleado
+80324>>>        Move '' to FechaInicial
+80325>>>        Move '' to FechaFinal
+80326>>>        Move '' to Titulo
+80327>>>        Move '' to Parametro        
+80328>>>        Move False to EstadoEmpleado
+80329>>>        Move False to EstadoPais
+80330>>>        
+80330>>>        // Asignacion de valores a variales
+80330>>>        Get Value of TxtPais to DatoPais
+80331>>>        Get Value of TxtEmpleado to DatoEmpleado
+80332>>>        Get Value of TxtFechaInicial to FechaInicial
+80333>>>        Get Value of TxtFechaFinal to FechaFinal
+80334>>>        
+80334>>>        // **PAIS**
+80334>>>        If (DatoPais = 0) Begin
+80336>>>             Move 'No se inserto ningun dato' to Mensaje                   
+80337>>>        End
+80337>>>>
+80337>>>        Else Begin 
+80338>>>            If (Trim(DatoPais)) ne 0 Begin
+80340>>>                Clear Nacionalidad  //tabla
+80341>>>                Move (Trim(DatoPais)) to Nacionalidad.Numero  //atributo codiog de la tabla Marcajestable
+80342>>>                Find eq Nacionalidad by Index.1   // busca segun el indice
+80343>>>>
+80343>>>                If [not Found] Begin
+80345>>>                    Send Info_Box 'El Pais Seleecionado no Existe'                    
+80346>>>                    Procedure_Return // retorna el procedimienot para hacer uso del sisema
+80347>>>                End
+80347>>>>
+80347>>>                Else Begin
+80348>>>                    Move True to EstadoPais
+80349>>>                End
+80349>>>>
+80349>>>            End
+80349>>>>
+80349>>>        End
+80349>>>>
+80349>>>        
+80349>>>        // **EMPLEADO**
+80349>>>        If (DatoEmpleado = 0) Begin
+80351>>>            Move 'No se inserto ningun dato' to Mensaje  
+80352>>>                                
+80352>>>        End
+80352>>>>
+80352>>>        Else Begin
+80353>>>           If (Trim(DatoEmpleado)) ne 0 Begin
+80355>>>                Clear Empleado  //tabla
+80356>>>                Move (Trim(DatoEmpleado)) to Empleado.Numero  //atributo codiog de la tabla Marcajestable
+80357>>>                Find eq Empleado by Index.1   // busca segun el indice
+80358>>>>
+80358>>>                If [not Found] Begin
+80360>>>                    Send Info_Box 'El Empleado Seleccionado no Existe'                    
+80361>>>                    Procedure_Return // retorna el procedimienot para hacer uso del sisema
+80362>>>                End
+80362>>>>
+80362>>>                Else Begin
+80363>>>                    Move True to EstadoEmpleado
+80364>>>                End
+80364>>>>
+80364>>>                
+80364>>>          End
+80364>>>>
+80364>>>            
+80364>>>        End
+80364>>>>
+80364>>>        
+80364>>>        //  **FECHAS**
+80364>>>        Indicate AceptarFecha True        
+80365>>>        Move ("01/01/1900") to ConteoFecha
+80366>>>        
+80366>>>         If (FechaInicial <> '' or FechaFinal <> '')
+80368>>>          Begin
+80368>>>>
+80368>>>            If ( (FechaInicial < ConteoFecha) or (FechaFinal < ConteoFecha))
+80370>>>             Begin 
+80370>>>>
+80370>>>                Send Info_Box 'Ingrese Fechas V lidas'
+80371>>>                Indicate AceptarFecha False
+80372>>>                Procedure_Return
+80373>>>            End
+80373>>>>
+80373>>>            Else If (FechaInicial > FechaFinal ) Begin
+80376>>>                 Send Info_Box 'La fecha Inicial no debe ser mayor a la fecha final' 'Error de Fechas'
+80377>>>                Indicate AceptarFecha False            
+80378>>>            End
+80378>>>>
+80378>>>            Else If (FechaInicial >= FechaFinal ) Begin
+80381>>>            
+80381>>>            [ AceptarFecha ] Send Run_Report to (ReporteFiltroFechas(Current_Object))
+80382>>>             End
+80382>>>>
+80382>>>         End
+80382>>>>
+80382>>>         Else Begin
+80383>>>            Send Info_Box 'Las Fechas son Requeridas'
+80384>>>            Procedure_Return
+80385>>>         End
+80385>>>>
+80385>>>         
+80385>>>        // Send Run_Report to (ReporteFiltroFechas(Current_Object))
+80385>>>             Set Report_Name of (ReporteFiltroFechas(Current_Object)) to "ReporteMacajeSM.rpt"
+80386>>>             Send Run_Report to (ReporteFiltroFechas(Current_Object))
+80387>>>        
+80387>>>    End_Procedure
+80388>>>    
+80388>>>     // **Creacion de Objeto**
+80388>>>      Object ReporteFiltroFechas is a WinQLReport
+80390>>>        
+80390>>>        Set Output_Destination to WQL_PRINT_TO_WINDOW
+80391>>>        
+80391>>>            Procedure OnInitializeReport
+80394>>>                String FullQuery
+80394>>>                Move '' to FullQuery
+80395>>>                Forward Send OnInitializeReport  // lanzamos el iniciador del reporte
+80397>>>                If (EstadoPais) Begin                
+80399>>>                    Append FullQuery '{Nacionalidad.Numero} = '
+80400>>>                    Append FullQuery Nacionalidad.Numero
+80401>>>                    Append FullQuery 'and '
+80402>>>                End
+80402>>>>
+80402>>>                
+80402>>>                // ** Validacion y creacion de Query**
+80402>>>                If (EstadoEmpleado) Begin 
+80404>>>                    Append FullQuery '{Empleado.Numero} = '
+80405>>>                    Append FullQuery Empleado.Numero ' and '
+80407>>>                     
+80407>>>                End
+80407>>>>
+80407>>>                
+80407>>>                Append FullQuery (Mid(FechaInicial,4,7))
+80408>>>                
+80408>>>             End_Procedure
+80409>>>        
+80409>>>      End_Object
+80410>>>      
+80410>>>      
+80410>>> //  {Nacionalidad.Numero} = 1 and
+80410>>> //  {Marcaje.FechaMarcaje} in "2022-05-05" to "2022-05-09" and
+80410>>>//   {Empleado.Numero} = 2
+80410>>>      
+80410>>>    
+80410>>>    
+80410>>>End_Object
+80411>
+80411>        Procedure Activate_About
+80414>            Send DoAbout "" "" "" "" ""
+80415>        End_Procedure
+80416>
+80416>    End_Object
+80417>
+80417>End_Object
+80418>
+80418>Start_UI
+80419>
+80419>//************************** end of WindowsProject.tpl for Spanish **************
+80419>
 Summary
 Memory Available: 2147483646
 Total Warnings : 0
 Total Errors   : 0
-Total Symbols  : 45610
+Total Symbols  : 45645
 Total Resources: 0
-Total Commands : 80341
+Total Commands : 80418
 Total Windows  : 1
 Total Pages    : 1
-Static Data    : 492043
-Message area   : 556794
-Total Blocks   : 28811
+Static Data    : 492905
+Message area   : 557020
+Total Blocks   : 28834
