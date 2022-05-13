@@ -377,7 +377,7 @@ Object Marcajes is a ReportView
                 Append FullQuery '{Marcaje.FechaMarcaje} <= ' sFechaAl 
                 
                 Set SelectionFormula to FullQuery
-                
+
                 
              End_Procedure
         
