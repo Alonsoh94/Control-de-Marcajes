@@ -7,7 +7,7 @@ GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=1
+SelectedTab=0
 [Window0]
 Filename=Workspace Dashboard
 ViewType=101
@@ -15,7 +15,7 @@ Top=24
 Left=4
 Bottom=433
 Right=787
-TabIndex=0
+TabIndex=1
 TabGroup=0
 [Window1]
 Filename=C:\DataFlex Projects\Control Marcajes\DDSrc\cMarcajesDataDictionary.dd
@@ -26,5 +26,5 @@ Bottom=433
 Right=787
 CursorLine=2
 CursorColumn=0
-TabIndex=1
+TabIndex=0
 TabGroup=0
