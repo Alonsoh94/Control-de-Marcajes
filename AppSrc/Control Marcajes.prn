@@ -8322,7 +8322,7 @@ Including file: Marcajes.fd    (C:\DataFlex Projects\Control Marcajes\DDSrc\Marc
 80485>>>    Set Server to oMarcajes_DD
 80486>>>
 80486>>>    Set Location to 9 7
-80487>>>    Set Size to 216 458
+80487>>>    Set Size to 216 203
 80488>>>    Set Label to "Reporte de Empleado"
 80489>>>
 80489>>>    Object oSaveAsDialog is a SaveAsDialog
