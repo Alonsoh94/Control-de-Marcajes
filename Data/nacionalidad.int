@@ -1,5 +1,5 @@
 DRIVER_NAME MSSQLDRV
-SERVER_NAME SERVER=DESKTOP-R7SE342\MAINSERVER;Database=MarcajesDB;Trusted_Connection=Yes
+SERVER_NAME SERVER=NBLJUAREZ;Database=MarcajesDB;Trusted_Connection=Yes
 DATABASE_NAME Nacionalidad
 SCHEMA_NAME dbo
 
