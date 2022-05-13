@@ -9,53 +9,22 @@ HorizontalGroups=1
 GroupSize=40
 SelectedTab=1
 [Window0]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\ListaNacionalidad.sl
-ViewType=1
-Top=24
-Left=4
-Bottom=542
-Right=975
-CursorLine=44
-CursorColumn=40
-TabIndex=2
-TabGroup=0
-[Window1]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\Marcajes.rv
-ViewType=2
-Top=24
-Left=4
-Bottom=542
-Right=975
-TabIndex=3
-TabGroup=0
-[Window2]
 Filename=Workspace Dashboard
 ViewType=101
 Top=24
 Left=4
-Bottom=542
-Right=975
+Bottom=433
+Right=787
 TabIndex=0
 TabGroup=0
-[Window3]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\ReporteEmpleado.rv
+[Window1]
+Filename=C:\DataFlex Projects\Control Marcajes\DDSrc\cMarcajesDataDictionary.dd
 ViewType=1
 Top=24
 Left=4
-Bottom=542
-Right=975
-CursorLine=84
-CursorColumn=18
-TabIndex=4
-TabGroup=0
-[Window4]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\ListaEmpleado.sl
-ViewType=1
-Top=24
-Left=4
-Bottom=542
-Right=975
-CursorLine=24
-CursorColumn=17
+Bottom=433
+Right=787
+CursorLine=7
+CursorColumn=49
 TabIndex=1
 TabGroup=0
