@@ -8530,14 +8530,15 @@ Including file: Marcajes.fd    (C:\DataFlex Projects\Control Marcajes\DDSrc\Marc
 80624>>>                Get Value of TxtFechaAl to dAl
 80625>>>                
 80625>>>                Move 0 to iContar
-80626>>>                
-80626>>>                Clear Marcajes
-80627>>>                Move iEmpleado to Marcajes.Empleado
-80628>>>                Move dDel to Marcajes.FechaMarcaje
-80629>>>                Find gt Marcajes by Index.2
-80630>>>>
-80630>>>                Find eq TipoMarcaje by Index.1
+80626>>>                Clear GridRegistros
+ERROR: 4313 Fichero INCLUDE no encontrado GRIDREGISTROS.FD ON LINE: 242 (80626) OF FILE: C:\DataFlex Projects\Control Marcajes\AppSrc\ReporteEmpleado.rv
+ERROR: 52 Formato de c lculo incorrecto  ON LINE: 242 (80626) OF FILE: C:\DataFlex Projects\Control Marcajes\AppSrc\ReporteEmpleado.rv
+80627>>>                Clear Marcajes
+80628>>>                Move iEmpleado to Marcajes.Empleado
+80629>>>                Move dDel to Marcajes.FechaMarcaje
+80630>>>                Find gt Marcajes by Index.2
 80631>>>>
+80631>>>               // Find eq TipoMarcaje by Index.1
 80631>>>                // ************************************************************
 80631>>>                While (Found and iEmpleado eq Marcajes.Empleado and Marcajes.FechaMarcaje ge dDel and Marcajes.FechaMarcaje le dAl)
 80635>>>                Move (iContar + 1) to iContar
@@ -8632,12 +8633,13 @@ Including file: Marcajes.fd    (C:\DataFlex Projects\Control Marcajes\DDSrc\Marc
 Summary
 Memory Available: 2147483646
 Total Warnings : 0
-Total Errors   : 0
-Total Symbols  : 45716
+Total Errors   : 2
+Total Symbols  : 45717
 Total Resources: 0
 Total Commands : 80697
 Total Windows  : 1
 Total Pages    : 1
 Static Data    : 494971
 Message area   : 559413
-Total Blocks   : 28923
+Total Blocks   : 28924
+2 ERRORS HAVE BEEN FOUND.

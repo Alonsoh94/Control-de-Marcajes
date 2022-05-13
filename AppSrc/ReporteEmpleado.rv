@@ -239,12 +239,12 @@ Object ReporteEmpleado is a ReportView
                 Get Value of TxtFechaAl to dAl
                 
                 Move 0 to iContar
-                
+                Clear GridRegistros
                 Clear Marcajes
                 Move iEmpleado to Marcajes.Empleado
                 Move dDel to Marcajes.FechaMarcaje
                 Find gt Marcajes by Index.2
-                Find eq TipoMarcaje by Index.1
+               // Find eq TipoMarcaje by Index.1
                 // ************************************************************
                 While (Found and iEmpleado eq Marcajes.Empleado and Marcajes.FechaMarcaje ge dDel and Marcajes.FechaMarcaje le dAl)
                 Move (iContar + 1) to iContar
