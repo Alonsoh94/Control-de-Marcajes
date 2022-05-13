@@ -7,161 +7,24 @@ GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-<<<<<<< HEAD
 SelectedTab=1
-=======
-SelectedTab=5
->>>>>>> e87bde44d37f9cd4901456ca22b21a85acd3eb4b
 [Window0]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\ListaNacionalidad.sl
-ViewType=1
-Top=24
-Left=4
-Bottom=542
-Right=975
-CursorLine=44
-CursorColumn=40
-TabIndex=2
-TabGroup=0
-[Window1]
-<<<<<<< HEAD
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\Marcajes.rv
-ViewType=2
-=======
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\RegistroEmpleado.vw
-ViewType=1
->>>>>>> e87bde44d37f9cd4901456ca22b21a85acd3eb4b
-Top=24
-Left=4
-Bottom=542
-Right=975
-<<<<<<< HEAD
-TabIndex=3
-TabGroup=0
-[Window2]
 Filename=Workspace Dashboard
 ViewType=101
-=======
-CursorLine=87
-CursorColumn=33
-TabIndex=2
-TabGroup=0
-[Window2]
-Filename=C:\DataFlex Projects\Control Marcajes\DDSrc\cEmpleadoDataDictionary.dd
-ViewType=1
->>>>>>> e87bde44d37f9cd4901456ca22b21a85acd3eb4b
 Top=24
 Left=4
-Bottom=542
-Right=975
-<<<<<<< HEAD
+Bottom=433
+Right=787
 TabIndex=0
 TabGroup=0
-[Window3]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\ReporteEmpleado.rv
+[Window1]
+Filename=C:\DataFlex Projects\Control Marcajes\DDSrc\cMarcajesDataDictionary.dd
 ViewType=1
-=======
-CursorLine=27
-CursorColumn=8
-TabIndex=6
-TabGroup=0
-[Window3]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\RegistroMarcajes.vw
-ViewType=2
->>>>>>> e87bde44d37f9cd4901456ca22b21a85acd3eb4b
 Top=24
 Left=4
-Bottom=542
-Right=975
-<<<<<<< HEAD
-CursorLine=84
-CursorColumn=18
-TabIndex=4
-TabGroup=0
-[Window4]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\ListaEmpleado.sl
-=======
+Bottom=433
+Right=787
+CursorLine=2
+CursorColumn=0
 TabIndex=1
-TabGroup=0
-[Window4]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\Control Marcajes.src
->>>>>>> e87bde44d37f9cd4901456ca22b21a85acd3eb4b
-ViewType=1
-Top=24
-Left=4
-Bottom=542
-Right=975
-<<<<<<< HEAD
-CursorLine=24
-CursorColumn=17
-TabIndex=1
-=======
-CursorLine=360
-CursorColumn=0
-TabIndex=3
-TabGroup=0
-[Window5]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\Marcajes.rv
-ViewType=2
-Top=24
-Left=4
-Bottom=542
-Right=975
-TabIndex=4
-TabGroup=0
-[Window6]
-Filename=C:\Program Files (x86)\DataFlex 18.2\Pkg\Dll.pkg
-ViewType=1
-Top=24
-Left=4
-Bottom=542
-Right=975
-CursorLine=153
-CursorColumn=0
-TabIndex=8
-TabGroup=0
-[Window7]
-Filename=C:\Program Files (x86)\DataFlex 18.2\Pkg\GlobalFunctionsProcedures.pkg
-ViewType=1
-Top=24
-Left=4
-Bottom=542
-Right=975
-CursorLine=262
-CursorColumn=0
-TabIndex=9
-TabGroup=0
-[Window8]
-Filename=C:\Program Files (x86)\DataFlex 18.2\Pkg\CrystalReport.pkg
-ViewType=1
-Top=24
-Left=4
-Bottom=542
-Right=975
-CursorLine=4991
-CursorColumn=0
-TabIndex=7
-TabGroup=0
-[Window9]
-Filename=C:\Program Files (x86)\DataFlex 18.2\Pkg\cCJCommandBarSystem.pkg
-ViewType=1
-Top=24
-Left=4
-Bottom=542
-Right=975
-CursorLine=9
-CursorColumn=0
-TabIndex=10
-TabGroup=0
-[Window10]
-Filename=C:\DataFlex Projects\Control Marcajes\AppSrc\Marcajes.rv
-ViewType=1
-Top=24
-Left=4
-Bottom=542
-Right=975
-CursorLine=303
-CursorColumn=0
-TabIndex=5
->>>>>>> e87bde44d37f9cd4901456ca22b21a85acd3eb4b
 TabGroup=0
