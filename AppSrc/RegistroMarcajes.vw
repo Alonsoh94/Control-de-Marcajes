@@ -31,20 +31,20 @@ Object RegistroMarcajes is a dbView
     Set Server to oMarcaje_DD
 
     Set Border_Style to Border_Thick
-    Set Size to 236 437
+    Set Size to 219 410
     Set Location to 2 2
     Set Label to "Registro de Marcajes"
     Set Bitmap_Style to Bitmap_Center
     Set Auto_Top_Panel_State to False
     Set Auto_Top_Item_State to False
-    Set piMaxSize to 236 437
-    Set piMinSize to 236 437
+    Set piMaxSize to 219 410
+    Set piMinSize to 219 410
     
     
 
     Object oDbGroup1 is a dbGroup
         Set Size to 218 462
-        Set Location to 13 11
+        Set Location to 2 3
         Set Label to "Registro de Marcajes"
 
         Object oDbCJGrid1 is a cDbCJGrid
@@ -66,33 +66,25 @@ Object RegistroMarcajes is a dbView
 
             Object oMarcaje_Empleado is a cDbCJGridColumn
                 Entry_Item Empleado.Numero 
-                Set piWidth to 60
+                Set piWidth to 65
                 Set psCaption to "Empleado"
                 Set peTextAlignment to xtpAlignmentCenter
                 Set pbResizable to False
             End_Object
+            
+            Object oEmpleado_Nombre is a cDbCJGridColumn
+                //Set Value to Empleado.PrimerNombre
+                Set piWidth to 150
+                Set psCaption to "Nombres y Apellidos"
+                Set pbFocusable to False
+                
+                Procedure OnSetCalculatedValue String ByRef sValue
+                    
+                    Move '' to sValue
+                    Append sValue (Trim(Empleado.PrimerNombre)) ' ' (Trim(Empleado.SegundoNombre)) ' ' (Trim(Empleado.PrimerApellido)) ' ' (Trim( Empleado.SegundoApellido))
+                End_Procedure
 
-            Object oEmpleado_PrimerNombre is a cDbCJGridColumn
-                Entry_Item Empleado.PrimerNombre
-                Set piWidth to 62
-                Set psCaption to "Nombres"
-            End_Object
-
-            Object oEmpleado_SegundoNombre is a cDbCJGridColumn
-                Entry_Item Empleado.SegundoNombre
-                Set piWidth to 60
-            End_Object
-
-            Object oEmpleado_PrimerApellido is a cDbCJGridColumn
-                Entry_Item Empleado.PrimerApellido
-                Set piWidth to 60
-                Set psCaption to "Apellidos"
-            End_Object
-
-            Object oEmpleado_SegundoApellido is a cDbCJGridColumn
-                Entry_Item Empleado.SegundoApellido
-                Set piWidth to 60
-            End_Object
+            End_Object            
 
             Object oMarcaje_FechaMarcaje is a cDbCJGridColumn
                 Entry_Item Marcaje.FechaMarcaje
@@ -108,9 +100,10 @@ Object RegistroMarcajes is a dbView
 
             Object oMarcaje_TipoMarcaje is a cDbCJGridColumn
                 Entry_Item TipoMarcaje.Numero
-                Set piWidth to 60
+                Set piWidth to 50
                 Set psCaption to "# Marcaje"
                 Set Prompt_Button_Mode to PB_PromptOn
+                Set peTextAlignment to xtpAlignmentCenter
                 Set Prompt_Object of oMarcaje_TipoMarcaje to (ListaTipoMarcaje(Current_Object))
                 
             End_Object

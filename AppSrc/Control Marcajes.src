@@ -140,6 +140,17 @@ Object oMain is a Panel
                         Send Activate_Marcajes of hoClient
                     End_Procedure
                 End_Object
+
+                Object oReportedeEmpleadoMenuItem is a cCJMenuItem
+                    Set psCaption to "Reporte de Empleado"
+                    Set psTooltip to "Reporte de Empleado"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_ReporteEmpleado of hoClient
+                    End_Procedure
+                End_Object
             End_Object
 
             Object oNavigateMenu is a cCJMenuItem
@@ -347,6 +358,7 @@ Object oMain is a Panel
         Use RegistroEmpleado.vw
         Use RegistroMarcajes.vw
         Use Marcajes.rv
+        Use ReporteEmpleado.rv
 
         Procedure Activate_About
             Send DoAbout "" "" "" "" ""

@@ -2,6 +2,7 @@ Use Windows.pkg
 Use DFRptVw.pkg
 Use DFRpt.pkg
 Use File_Dlg.Pkg
+Use SQLDATE.pkg
 Use cNacionalidadDataDictionary.dd
 Use cEmpleadoDataDictionary.dd
 Use cTipoMarcajeDataDictionary.dd
@@ -217,31 +218,13 @@ Object Marcajes is a ReportView
 
     Object BtnGenerar is a Button  // ********Boton Generar
         Set Size to 14 68
-        Set Location to 162 23
+        Set Location to 162 34
         Set Label to "Generar"
     
         // fires when the button is clicked
         Procedure OnClick
             Forward Send OnClick False 
-     //      String Mensaje
-     //      Variant obtener
-     //      
-     //      Get Value of TxtPais to obtener
-     //     
-     //     If ( obtener = rdString) Begin           
-     //          Send Info_Box "Solo se admiten valores Numericos"
-     //          Procedure_Return
-     //     End 
-     //     Else Begin
-     //         If (obtener = 0) Begin
-     //              Move "Pais no Seleccionado" to Mensaje                     
-     //         End
-     //         Else Begin
-     //             Move obtener to Mensaje
-     //            
-     //         End
-     //     End
-     //     
+       
          Send GenerarReporteMarcaje
             
             
@@ -251,23 +234,15 @@ Object Marcajes is a ReportView
 
     Object BtnNuevo is a Button
         Set Size to 14 68
-        Set Location to 162 108
+        Set Location to 162 137
         Set Label to "Nuevo"
     
         // fires when the button is clicked
         Procedure OnClick
-             Number Dato 
-             String Mensaje
-            
-            Get Value of TxtPais to Dato
-            
-            If (Dato = 0) Begin
-                Move "Pais no Seleccionado" to Mensaje
-            End
-            Else Begin
-               Get Label of EtiquetaPais to Mensaje
-            End
-            
+            Set Value of TxtEmpleado to ''
+            Set Value of TxtPais  to ''
+            Set Value of TxtFechaFinal to ''
+            Set Value of TxtFechaInicial to ''
         End_Procedure
     
     End_Object
@@ -301,10 +276,10 @@ Object Marcajes is a ReportView
         Get Value of TxtFechaFinal to FechaFinal
         
         // **PAIS**
-        If (DatoPais = 0) Begin
-             Move 'No se inserto ningun dato' to Mensaje                   
-        End
-        Else Begin 
+        //If (DatoPais = 0) Begin
+        //     Move 'No se inserto ningun dato' to Mensaje                   
+        //End
+        //Else Begin 
             If (Trim(DatoPais)) ne 0 Begin
                 Clear Nacionalidad  //tabla
                 Move (Trim(DatoPais)) to Nacionalidad.Numero  //atributo codiog de la tabla Marcajestable
@@ -317,7 +292,7 @@ Object Marcajes is a ReportView
                     Move True to EstadoPais
                 End
             End
-        End
+        //End
         
         // **EMPLEADO**
         If (DatoEmpleado = 0) Begin
@@ -344,6 +319,7 @@ Object Marcajes is a ReportView
         //  **FECHAS**
         Indicate AceptarFecha True        
         Move ("01/01/1900") to ConteoFecha
+        Set Report_Name of (ReporteFiltroFechas(Current_Object)) to "ReporteMacajeSM.rpt"
         
          If (FechaInicial <> '' or FechaFinal <> '')
           Begin
@@ -357,7 +333,7 @@ Object Marcajes is a ReportView
                  Send Info_Box 'La fecha Inicial no debe ser mayor a la fecha final' 'Error de Fechas'
                 Indicate AceptarFecha False            
             End
-            Else If (FechaInicial >= FechaFinal ) Begin
+            Else If (FechaInicial <= FechaFinal ) Begin
             
             [ AceptarFecha ] Send Run_Report to (ReporteFiltroFechas(Current_Object))
              End
@@ -368,8 +344,8 @@ Object Marcajes is a ReportView
          End
          
         // Send Run_Report to (ReporteFiltroFechas(Current_Object))
-             Set Report_Name of (ReporteFiltroFechas(Current_Object)) to "ReporteMacajeSM.rpt"
-             Send Run_Report to (ReporteFiltroFechas(Current_Object))
+             
+             //Send Run_Report to (ReporteFiltroFechas(Current_Object))
         
     End_Procedure
     
@@ -379,7 +355,9 @@ Object Marcajes is a ReportView
         Set Output_Destination to WQL_PRINT_TO_WINDOW
         
             Procedure OnInitializeReport
-                String FullQuery
+                String FullQuery sFechaDel sFechaAl
+                Move (fSQL_date(FechaInicial)) to sFechaDel
+                Move (fSQL_date(FechaFinal)) to sFechaAl
                 Move '' to FullQuery
                 Forward Send OnInitializeReport  // lanzamos el iniciador del reporte
                 If (EstadoPais) Begin                
@@ -395,7 +373,11 @@ Object Marcajes is a ReportView
                      
                 End
                 
-                Append FullQuery (Mid(FechaInicial,4,7))
+                Append FullQuery '{Marcaje.FechaMarcaje} >= ' sFechaDel ' and '
+                Append FullQuery '{Marcaje.FechaMarcaje} <= ' sFechaAl 
+                
+                Set SelectionFormula to FullQuery
+                
                 
              End_Procedure
         

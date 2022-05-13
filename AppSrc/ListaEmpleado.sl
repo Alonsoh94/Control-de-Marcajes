@@ -24,44 +24,41 @@ Object ListaEmpleado is a dbModalPanel
     Set Main_DD to oEmpleado_DD
     Set Server to oEmpleado_DD
 
-    Set Size to 133 455
-    Set Location     to 4 5
+    Set Size to 131 251
+    Set Location to 5 5
     Set Border_Style to Border_Thick
     Set Label to "Lista de Empleado"
 
     Object oSelList is a dbList
         Set peAnchors to anAll
-        Set Size to 105 443
-        Set Location  to 6 6
+        Set Size to 103 243
+        Set Location to 5 5
 
         Begin_Row
             Entry_Item Empleado.Numero
-            Entry_Item Empleado.PrimerNombre
-            Entry_Item Empleado.SegundoNombre
-            Entry_Item Empleado.PrimerApellido
-            Entry_Item Empleado.SegundoApellido
+            Entry_Item (Trim(Empleado.PrimerNombre) + '  ' + Trim(Empleado.SegundoNombre) + '  ' + Trim(Empleado.PrimerApellido) + '  ' + Trim(Empleado.SegundoApellido) )
+         //   Entry_Item Empleado.SegundoNombre
+         //   Entry_Item Empleado.PrimerApellido
+         //   Entry_Item Empleado.SegundoApellido
             Entry_Item Nacionalidad.Pais
         End_Row
 
         Set Main_File to Empleado.File_Number
 
         Set Form_Width 0 to 24
+        Set Resize_Column_State to False
         Set Header_Label 0 to "#"
-        Set Form_Width 1 to 60
-        Set Header_Label 1 to "Primer Nombre"
-        Set Form_Width 2 to 60
-        Set Header_Label 2 to "Segundo Nombre"
-        Set Form_Width 3 to 60
-        Set Header_Label 3 to "Primer Apellido"
-        Set Form_Width 4 to 60
-        Set Header_Label 4 to "Segundo Apellido"
+        Set Form_Width 1 to 150
+        Set Resize_Column_State to False
+        Set Header_Label 1 to "Nombres y Apellidos"      
+   
         Set Form_Width 5 to 60
         Set Header_Label 5 to "Pais"
     End_Object
 
     Object oOK_bn is a Button
         Set Label     to "&Aceptar"
-        Set Location to 115 291
+        Set Location to 113 87
         Set peAnchors to anBottomRight
 
         Procedure OnClick
@@ -72,7 +69,7 @@ Object ListaEmpleado is a dbModalPanel
 
     Object oCancel_bn is a Button
         Set Label     to "&Cancelar"
-        Set Location to 115 345
+        Set Location to 113 141
         Set peAnchors to anBottomRight
 
         Procedure OnClick
@@ -83,7 +80,7 @@ Object ListaEmpleado is a dbModalPanel
 
     Object oSearch_bn is a Button
         Set Label     to "&Buscar..."
-        Set Location to 115 399
+        Set Location to 113 195
         Set peAnchors to anBottomRight
 
         Procedure OnClick

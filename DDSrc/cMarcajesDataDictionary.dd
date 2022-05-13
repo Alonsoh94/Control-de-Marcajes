@@ -1,0 +1,45 @@
+Use DataDict.pkg
+
+Open Marcajes
+Open Empleado
+Open TipoMarcaje
+Open Autoincrementable
+
+Class cMarcajesDataDictionary is a DataDictionary
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to Marcajes.File_Number
+
+        Set Add_System_File to Autoincrementable.File_Number DD_Lock_On_All
+
+        Set Add_Server_File to Empleado.File_Number
+        Set Add_Server_File to TipoMarcaje.File_Number
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+        Set Key_Field_State Field Marcajes.Numero to True
+        Set Field_Option Field Marcajes.Numero DD_AUTOFIND to True
+        Set Field_Auto_Increment Field Marcajes.Numero to File_Field Autoincrementable.NumMarcaje
+        Set Field_Option Field Marcajes.Numero DD_REQUIRED to True
+
+        Set Field_Option Field Marcajes.Empleado DD_AUTOFIND to True
+        Set Field_Option Field Marcajes.Empleado DD_REQUIRED to True
+        Set Field_Option Field Marcajes.Empleado DD_CAPSLOCK to True
+
+        Set Field_Option Field Marcajes.FechaMarcaje DD_AUTOFIND to True
+        Set Field_Option Field Marcajes.FechaMarcaje DD_REQUIRED to True
+        Set Field_Option Field Marcajes.FechaMarcaje DD_CAPSLOCK to True
+
+        Set Field_Option Field Marcajes.HoraMarcaje DD_AUTOFIND to True
+        Set Field_Option Field Marcajes.HoraMarcaje DD_REQUIRED to True
+
+        Set Field_Option Field Marcajes.TipoMarcaje DD_AUTOFIND to True
+        Set Field_Option Field Marcajes.TipoMarcaje DD_REQUIRED to True
+
+    End_Procedure
+
+End_Class

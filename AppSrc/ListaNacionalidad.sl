@@ -19,15 +19,17 @@ Object ListaNacionalidad is a dbModalPanel
     Set Main_DD to oNacionalidad_DD
     Set Server to oNacionalidad_DD
 
-    Set Size to 133 292
+    Set Size to 133 184
     Set Location     to 4 5
     Set Border_Style to Border_Thick
     Set Label to "Lista de Nacionalidades"
+    Set piMaxSize to 133 184
+    Set piMinSize to 133 184
 
     Object oSelList is a dbList
         Set peAnchors to anAll
-        Set Size      to 105 280
-        Set Location  to 6 6
+        Set Size to 105 172
+        Set Location to 5 5
 
         Begin_Row
             Entry_Item Nacionalidad.Numero
@@ -36,15 +38,18 @@ Object ListaNacionalidad is a dbModalPanel
 
         Set Main_File to Nacionalidad.File_Number
 
-        Set Form_Width 0 to 84
+        Set Form_Width 0 to 60
+        Set Resize_Column_State to False
         Set Header_Label 0 to "Numero"
-        Set Form_Width 1 to 270
+        Set Form_Width 1 to 100
+        Set Resize_Column_State to false
         Set Header_Label 1 to "Pais"
+        
     End_Object
 
     Object oOK_bn is a Button
         Set Label     to "&Aceptar"
-        Set Location  to 115 128
+        Set Location to 115 20
         Set peAnchors to anBottomRight
 
         Procedure OnClick
@@ -55,7 +60,7 @@ Object ListaNacionalidad is a dbModalPanel
 
     Object oCancel_bn is a Button
         Set Label     to "&Cancelar"
-        Set Location  to 115 182
+        Set Location to 115 74
         Set peAnchors to anBottomRight
 
         Procedure OnClick
@@ -66,7 +71,7 @@ Object ListaNacionalidad is a dbModalPanel
 
     Object oSearch_bn is a Button
         Set Label     to "&Buscar..."
-        Set Location  to 115 236
+        Set Location to 115 128
         Set peAnchors to anBottomRight
 
         Procedure OnClick

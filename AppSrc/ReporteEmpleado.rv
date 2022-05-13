@@ -1,0 +1,319 @@
+Use Windows.pkg
+Use DFRptVw.pkg
+Use DFRpt.pkg
+Use File_Dlg.Pkg
+Use MonthCalendarPrompt.dg
+Use cDbCJGrid.pkg
+Use cNacionalidadDataDictionary.dd
+Use cEmpleadoDataDictionary.dd
+Use cTipoMarcajeDataDictionary.dd
+Use cMarcajesDataDictionary.dd
+Use cdbCJGridColumn.pkg
+Use dfSelLst.pkg
+Open Marcajes
+Open TipoMarcaje
+
+Activate_View Activate_ReporteEmpleado for ReporteEmpleado
+Object ReporteEmpleado is a ReportView
+    Object oTipoMarcaje_DD is a cTipoMarcajeDataDictionary
+    End_Object
+
+    Object oNacionalidad_DD is a cNacionalidadDataDictionary
+    End_Object
+
+    Object oEmpleado_DD is a cEmpleadoDataDictionary
+        Set DDO_Server to oNacionalidad_DD
+    End_Object
+
+    Object oMarcajes_DD is a cMarcajesDataDictionary
+        Set DDO_Server to oTipoMarcaje_DD
+        Set DDO_Server to oEmpleado_DD
+    End_Object
+
+    Set Main_DD to oMarcajes_DD
+    Set Server to oMarcajes_DD
+
+    Set Location to 9 7
+    Set Size to 216 203
+    Set Label to "Reporte de Empleado"
+
+    Object oSaveAsDialog is a SaveAsDialog
+    End_Object
+
+    Procedure StartReport
+        Integer iOutputDevice 
+        Handle hoWorkspace
+        String sFileName sCurrentDirectory sDataPath
+    
+        Get Output_Device_Mode to iOutputDevice
+    
+        Case Begin
+            Case (iOutputDevice = PRINT_TO_WINDOW)
+                Get_Current_Directory to sCurrentDirectory
+                Get phoWorkspace Of ghoApplication to hoWorkspace
+                Get psDataPath Of hoWorkspace to sDataPath
+                Get PathAtIndex Of hoWorkspace sDataPath 1 to sDataPath
+                Set_Directory sDataPath
+                Make_Temp_File "TXT" sFileName
+                Set_Directory sCurrentDirectory
+                If (Right(sDataPath, 1) <> Sysconf(SYSCONF_DIR_SEPARATOR)) Begin
+                    Move (sDataPath - Sysconf(SYSCONF_DIR_SEPARATOR)) To sDataPath
+                End
+                Move (sDataPath - sFileName) to sFileName
+                Set Output_Device_Name to sFileName
+                Case Break
+            Case (iOutputDevice = PRINT_TO_PRINTER)
+                Set Output_Device_Name to "WinLST:"
+                Case Break
+            
+        Case End
+    
+        Send Run_Report
+    
+        If (iOutputDevice = PRINT_TO_WINDOW) Begin
+            Runprogram Background "NotePad" sFileName
+            EraseFile sFileName
+        End
+    End_Procedure
+    
+    Object oBasicReport is a BasicReport
+        // Set Server To DDOName
+        
+        // Create a new file with the images for the report. Include this filename in the
+        // component with a USE statement. Replace the HeaderSection, BodySection, FooterSection
+        // with the imagenames you've created.
+        // NOTE: 
+        // - Image names must be unique throughout the program
+        // - Images start at the first column of the sourcecode in the format /ImageName
+        // - End of an image is the start of a new one or a /*
+
+        Function Starting_Main_Report Returns Integer
+            Integer iRetval
+            
+            Forward Get Starting_Main_Report to iRetval
+            
+            Function_Return iRetval
+        End_Function
+
+       
+
+
+    End_Object
+
+    Object oGroup1 is a Group
+        Set Size to 32 190
+        Set Location to 3 4
+        Set Label to "Seleccionar Empleado"
+
+        Object TxtCodigoEmpleado is a Form
+            Set Size to 13 34
+            Set Location to 11 8
+            Set Prompt_Button_Mode to PB_PromptOn
+            Set Prompt_Object to (ListaEmpleado(Current_Object))
+
+            Procedure OnChange
+                Forward Send OnChange
+                Set Value of EtiquetaNombreEmpleado to (Trim(Empleado.PrimerNombre) + ' ' + Trim(Empleado.SegundoNombre) + ' ' + Trim(Empleado.PrimerApellido) + ' ' + Trim(Empleado.SegundoApellido)) 
+                
+            End_Procedure
+        
+            // OnChange is called on every changed character
+        //    Procedure OnChange
+        //        String sValue
+        //    
+        //        Get Value to sValue
+        //    End_Procedure
+        
+        End_Object
+
+        Object EtiquetaNombreEmpleado is a TextBox
+            Set Size to 10 150
+            Set Location to 13 47
+        End_Object
+    End_Object
+
+    Object oGroup2 is a Group
+        Set Size to 36 190
+        Set Location to 36 5
+        Set Label to "Rango de Fechas"
+
+        Object TxtFechaDel is a Form
+            Set Size to 13 44
+            Set Location to 13 17
+            Set Label to "Del :"
+            Set Label_Col_Offset to 15
+            Set Form_Datatype to Mask_Date_Window
+            Set Prompt_Object to oMonthCalendarPrompt
+            Set Prompt_Button_Mode to PB_PromptOn
+        
+            // OnChange is called on every changed character
+        //    Procedure OnChange
+        //        String sValue
+        //    
+        //        Get Value to sValue
+        //    End_Procedure
+        
+        End_Object
+
+        Object TxtFechaAl is a Form
+            Set Size to 13 44
+            Set Location to 13 83
+            Set Label to "al :"
+            Set Label_Col_Offset to 15
+            Set Form_Datatype to Mask_Date_Window
+            Set Prompt_Object to oMonthCalendarPrompt
+            Set Prompt_Button_Mode to PB_PromptOn
+        
+            // OnChange is called on every changed character
+        //    Procedure OnChange
+        //        String sValue
+        //    
+        //        Get Value to sValue
+        //    End_Procedure
+        
+        End_Object
+
+        Object BtnCalcualar is a Button
+            Set Location to 12 137
+            Set Label to "Calcular"
+        
+            // fires when the button is clicked
+            Procedure OnClick
+              
+                 Send DoFillGrid of GridRegistros
+                 
+            End_Procedure
+        
+        End_Object
+    End_Object
+
+    Object oGroup3 is a Group
+        Set Size to 132 191
+        Set Location to 74 5
+        Set Label to "Resultados"
+
+        Object TxtTotalMarcajes is a Form
+            Set Size to 13 25
+            Set Location to 10 63
+            Set Label to "Total de Marcajes:"
+            Set Label_Col_Offset to 58
+            Set Enabled_State to False
+            
+        
+            // OnChange is called on every changed character
+        //    Procedure OnChange
+        //        String sValue
+        //    
+        //        Get Value to sValue
+        //    End_Procedure
+        
+        End_Object
+
+        Object GridRegistros is a Grid
+            Set Location to 26 3
+        
+            Set Size to 100 184
+        
+            Set Line_Width to 4 0
+        
+            Set Form_Width 0 to 18
+            Set Header_Label 0 to "#"
+        
+            Set Form_Width 1 to 40
+            Set Header_Label 1 to "Fecha"
+        
+            Set Form_Width 2 to 40
+            Set Header_Label 2 to "Hora"
+            Set Header_Label 3 to "Tipo Marcaje"
+            Set Form_Width 3 to 50
+        
+            // Sample method of how to fill a grid
+            Procedure DoFillGrid
+                
+                Integer iEmpleado iContar
+                Date dDel dAl
+                String sMensaje
+                
+                Get Value of TxtCodigoEmpleado to  iEmpleado
+                Get Value of TxtFechaDel to dDel
+                Get Value of TxtFechaAl to dAl
+                
+                Move 0 to iContar
+                
+                Clear Marcajes
+                Move iEmpleado to Marcajes.Empleado
+                Move dDel to Marcajes.FechaMarcaje
+                Find gt Marcajes by Index.2
+                Find eq TipoMarcaje by Index.1
+                // ************************************************************
+                While (Found and iEmpleado eq Marcajes.Empleado and Marcajes.FechaMarcaje ge dDel and Marcajes.FechaMarcaje le dAl)
+                Move (iContar + 1) to iContar
+                    
+               // If (Marcajes.TipoMarcaje EQ 2) Move (iContar + 1) to iContar
+                  Send Add_Item 0 (iContar)
+                  Send Add_Item 1 (Marcajes.FechaMarcaje)
+                  Send Add_Item 2 (Marcajes.HoraMarcaje)
+                  Send Add_Item 3 (marcajes.TipoMarcaje)
+                  
+                  
+                
+                Find gt Marcajes by Index.2
+                Loop
+                
+                Move "Se encontraron " to sMensaje
+                Append sMensaje iContar
+                Append sMensaje " registros en la tabla Marcaje"
+                //Send Info_Box sMensaje "Informacion"
+                Set Value of TxtTotalMarcajes to iContar
+                
+            End_Procedure
+            
+        End_Object
+       
+
+    Object oDbList1 is a dbList
+        Set Size to 100 200
+        Set Location to 92 222
+
+        Begin_Row
+            Entry_Item Empleado.Numero
+            Entry_Item Marcajes.FechaMarcaje
+            Entry_Item Marcajes.HoraMarcaje
+        End_Row
+
+        Set Main_File to Marcajes.File_Number
+
+        Set Form_Width 0 to 24
+        Set Header_Label 0 to "Empleado"
+        Set Form_Width 1 to 60
+        Set Header_Label 1 to "FechaMarcaje"
+        Set Form_Width 2 to 72
+        Set Header_Label 2 to "HoraMarcaje"
+    End_Object
+    
+    
+    
+  Procedure Calculardatos 
+    Integer NumEmpleado
+    Date FechaInciaConteo
+    Date FechaFinalizaConteo
+    Integer Contador
+    Move 0 to Contador
+    Get Value of TxtCodigoEmpleado to NumEmpleado
+    Get Value of TxtFechaDel to FechaInciaConteo
+    Get Value of TxtFechaAl to FechaFinalizaConteo
+    
+    
+        Begin
+            While (FechaInciaConteo <= FechaFinal)
+                If (NumEmpleado = Marcaje.Empleado) Begin
+                    Move (Contador + 1) to Contador
+                End
+            Loop
+        End
+        
+        Set Value of TxtTotalMarcajes to Contador
+  End_Procedure
+
+    End_Object
+ End_Object

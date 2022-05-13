@@ -1,0 +1,7 @@
+#REPLACE FILE6 Marcajes
+#REPLACE Marcajes.File_Number |CI6
+#REPLACE Marcajes.Numero |FN6,1
+#REPLACE Marcajes.Empleado |FN6,2
+#REPLACE Marcajes.FechaMarcaje |FD6,3
+#REPLACE Marcajes.HoraMarcaje |FS6,4
+#REPLACE Marcajes.TipoMarcaje |FN6,5
